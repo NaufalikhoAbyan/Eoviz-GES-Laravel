@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BloodType;
 use Illuminate\Http\Request;
 
 class BloodTypesController extends Controller
@@ -11,7 +12,7 @@ class BloodTypesController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('References/BloodTypes/Index');
     }
 
     /**

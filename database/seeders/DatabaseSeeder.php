@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\BloodType;
 use Illuminate\Database\Seeder;
+use Database\Seeders\BloodTypeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +19,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        BloodType::factory(10)->create();
+
+        $this->call([
+            BloodTypeSeeder::class,
+        ]);
     }
 }
