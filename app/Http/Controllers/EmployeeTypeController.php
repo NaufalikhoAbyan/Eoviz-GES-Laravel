@@ -12,7 +12,10 @@ class EmployeeTypeController extends Controller
      */
     public function index()
     {
-        //
+        $employeeTypes = EmployeeType::all();
+        return inertia('References/EmployeeType/IndexView', [
+            'employeeTypes' => $employeeTypes,
+        ]);
     }
 
     /**
