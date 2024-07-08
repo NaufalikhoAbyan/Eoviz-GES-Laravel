@@ -13,6 +13,20 @@ class EmployeeTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        EmployeeType::factory(5)->create();
+        EmployeeType::factory()->create([
+            'order' => 1
+        ]);
+        EmployeeType::factory()->create([
+            'order' => 2
+        ]);
+        EmployeeType::factory()->create([
+            'order' => 3
+        ]);
+        EmployeeType::factory()->create([
+            'order' => 4
+        ]);
+        EmployeeType::factory()->create([
+            'order' => 5
+        ]);
     }
 }
