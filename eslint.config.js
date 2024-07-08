@@ -8,10 +8,19 @@ export default [
         ignores: [
             "node_modules/**",
             "vendor/**",
+            'public/build/**',
+            'postcss.config.js'
         ]
     },
-    {files: ["**/*.{js,mjs,cjs,vue}"]},
-    {languageOptions: { globals: globals.browser }},
+    {
+        files: ["**/*.{js,mjs,cjs,vue}"],
+        rules: {
+            'semi': ["error", "always"]
+        },
+    },
+    {
+        languageOptions: { globals: globals.browser }
+    },
     pluginJs.configs.recommended,
     ...pluginVue.configs["flat/essential"],
 ];
