@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .table-page-name {
+        @apply text-3xl font-semibold
+    }
+    .primary-btn {
+        @apply px-4 py-2 bg-blue-500 rounded-md text-white drop-shadow-md active:drop-shadow-none
+    }
+    .table-item {
+        @apply p-4
+    }
+}
