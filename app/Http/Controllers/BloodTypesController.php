@@ -12,7 +12,10 @@ class BloodTypesController extends Controller
      */
     public function index()
     {
-        return inertia('References/BloodTypes/Index');
+        $bloodTypes = BloodType::all();
+        return inertia('References/BloodType/IndexView',[
+            'bloodTypes' => $bloodTypes,
+        ]);
     }
 
     /**
@@ -21,6 +24,10 @@ class BloodTypesController extends Controller
     public function create()
     {
         //
+        $bloodTypes = BloodType::all();
+        return inertia('References/BloodType/CreateView',[
+            'bloodTypes' => $bloodTypes,
+        ]);
     }
 
     /**
