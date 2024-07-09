@@ -27,4 +27,7 @@
     .card {
         @apply mt-8 border rounded-lg drop-shadow-lg bg-white
     }
+    .card-success {
+        @apply card drop-shadow-none p-4 mt-0 bg-green-100 text-green-700
+    }
 }

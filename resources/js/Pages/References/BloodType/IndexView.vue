@@ -12,9 +12,7 @@ const props = defineProps({
         <div>
             <div class="flex justify-between items-center">
                 <PageTitle page-name="Blood Types" description="List of all blood types"/>
-                <Link :href="route('blood-types.create')">
-                <button class="primary-btn h-fit">Add</button>
-                </Link>
+                <Link :href="route('blood-types.create')"><button class="primary-btn h-fit">Add</button></Link>
             </div>
             <div class="card">
                 <table class="table-auto w-full text-left">

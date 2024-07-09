@@ -38,7 +38,7 @@ class EmployeeTypeController extends Controller
             'status' => ['required'],
             'description' => ['required']
         ]));
-        return redirect(route('employee-types.index'));
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly added!']);
     }
 
     /**

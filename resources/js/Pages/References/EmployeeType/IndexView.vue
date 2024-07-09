@@ -13,6 +13,9 @@ let count = 1
             <PageTitle page-name="Employee Type" description="List of all employee types"/>
             <Link :href="route('employee-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
+        <div v-if="$page.props.flash.message" class="card-success">
+            {{ $page.props.flash.message }}
+        </div>
         <div class="card">
             <table class="table-auto w-full text-left">
                 <thead>
