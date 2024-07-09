@@ -12,4 +12,4 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::resource('/blood-types', BloodTypesController::class);
-Route::resource('/employee-types', EmployeeTypeController::class)->only(['index', 'create']);
+Route::resource('/employee-types', EmployeeTypeController::class)->only(['index', 'create', 'store']);
