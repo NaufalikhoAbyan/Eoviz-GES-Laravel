@@ -23,7 +23,7 @@ class EmployeeTypeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/EmployeeType/CreateView');
     }
 
     /**
@@ -31,7 +31,14 @@ class EmployeeTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        EmployeeType::create($request->validate([
+            'name' => ['required'],
+            'is_permanent' => ['required'],
+            'order' => ['required', 'integer', 'unique:employee_types'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly added!']);
     }
 
     /**

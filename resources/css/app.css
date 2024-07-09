@@ -3,19 +3,31 @@
 @tailwind utilities;
 
 @layer components {
-    .table-page-name {
+    .page-name {
         @apply text-3xl font-semibold
     }
+
     .primary-btn {
         @apply px-4 py-2 bg-blue-500 rounded-md text-white drop-shadow-md active:drop-shadow-none
+    }
+    .secondary-btn {
+        @apply px-4 py-2 bg-white rounded-md border drop-shadow-md active:drop-shadow-none
     }
     .act-btn {
         @apply p-2 mx-2 rounded-lg text-white drop-shadow-md active:drop-shadow-none
     }
+
     .table-item {
         @apply p-4
     }
-    .table-item2 {
+    .table-action-item {
         @apply p-4 flex justify-between items-center
+    }
+
+    .card {
+        @apply mt-8 border rounded-lg drop-shadow-lg bg-white
+    }
+    .card-success {
+        @apply card drop-shadow-none p-4 mt-0 bg-green-100 text-green-700
     }
 }

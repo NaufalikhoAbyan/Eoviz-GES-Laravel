@@ -11,5 +11,5 @@ Route::get('/about', function () {
     return inertia('AboutView');
 })->name('about');
 
-Route::resource('bloodtype', BloodTypesController::class);
-Route::resource('/employee-types', EmployeeTypeController::class)->only(['index']);
+Route::resource('/blood-types', BloodTypesController::class);
+Route::resource('/employee-types', EmployeeTypeController::class)->only(['index', 'create', 'store']);
