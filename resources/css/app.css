@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
     .table-page-name {
         @apply text-3xl font-semibold
