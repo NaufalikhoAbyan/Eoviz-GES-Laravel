@@ -23,7 +23,7 @@ class EmployeeTypeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/EmployeeType/CreateView');
     }
 
     /**
