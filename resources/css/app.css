@@ -14,14 +14,14 @@
         @apply px-4 py-2 bg-white rounded-md border drop-shadow-md active:drop-shadow-none
     }
     .act-btn {
-        @apply p-2 mx-2 rounded-lg text-white drop-shadow-md active:drop-shadow-none
+        @apply px-4 py-2 rounded-lg text-white drop-shadow-md active:drop-shadow-none
     }
 
     .table-item {
         @apply p-4
     }
     .table-action-item {
-        @apply p-4 flex justify-between items-center
+        @apply p-4 flex gap-4 items-center
     }
 
     .card {

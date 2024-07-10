@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import PageTitle from "@/Pages/Components/PageTitle.vue";
+import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     employeeTypes: Object
 });
@@ -36,9 +37,7 @@ let count = 1
                         <td class="table-item">{{ employeeType.order }}</td>
                         <td class="table-item">{{ employeeType.status }}</td>
                         <td class="table-action-item">
-                            <Link :href="route('employee-types.edit', employeeType.id)"><button class="act-btn bg-green-500">Edit</button></Link>
-                            <Link :href="route('employee-types.show', employeeType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
-                            <button class="act-btn bg-red-500">Delete</button>
+                            <ActionButtons route-name="employee-types" :parameter="employeeType.id"/>
                         </td>
                     </tr>
                 </tbody>

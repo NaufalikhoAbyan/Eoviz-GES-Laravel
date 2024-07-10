@@ -82,6 +82,7 @@ class EmployeeTypeController extends Controller
      */
     public function destroy(EmployeeType $employeeType)
     {
-        //
+        $employeeType->delete();
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly deleted!']);
     }
 }
