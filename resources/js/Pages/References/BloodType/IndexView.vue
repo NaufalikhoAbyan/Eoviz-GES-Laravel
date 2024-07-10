@@ -12,7 +12,10 @@ const props = defineProps({
         <div>
             <div class="flex justify-between items-center">
                 <PageTitle page-name="Blood Types" description="List of all blood types"/>
-                <Link :href="route('blood-types.create')"><button class="primary-btn h-fit">Add</button></Link>
+                <Link :href="route('blood-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
+            </div>
+            <div v-if="$page.props.flash.message" class="card-success">
+                {{ $page.props.flash.message }}
             </div>
             <div class="card">
                 <table class="table-auto w-full text-left">
@@ -32,13 +35,14 @@ const props = defineProps({
                             <td class="table-item">{{ bloodType.status }}</td>
                             <td class="table-item">{{ bloodType.description }}</td>
                             <td class="table-action-item">
-                                <button class="act-btn bg-red-500">Delete</button>
-                                <button class="act-btn bg-yellow-500">Show</button>
                                 <button class="act-btn bg-green-500">Edit</button>
+                                <Link :href="route('blood-types.show', bloodType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
+                                <button class="act-btn bg-red-500">Delete</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </template>

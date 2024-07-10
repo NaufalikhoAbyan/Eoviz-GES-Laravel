@@ -18,9 +18,9 @@ class BloodTypeFactory extends Factory
     {
         return [
             //
-            'name'=> fake()->name(),
+            'name'=> fake()->bloodType(),
             'status'  => fake()->randomElement(['Active','Not Active']),
-            'description' => fake()->paragraph(),
+            'description' => fake()->text(),
         ];
     }
 }
