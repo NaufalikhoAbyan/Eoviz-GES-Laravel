@@ -23,11 +23,7 @@ class BloodTypesController extends Controller
      */
     public function create()
     {
-        //
-        $bloodTypes = BloodType::all();
-        return inertia('References/BloodType/CreateView',[
-            'bloodTypes' => $bloodTypes,
-        ]);
+        return inertia('References/BloodType/CreateView');
     }
 
     /**
@@ -35,15 +31,23 @@ class BloodTypesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        BloodType::create($request->validate([
+            'name' => ['required','unique:blood_types'],
+            'status' => ['required'],
+            'description' => ['required'],
+
+        ]));
+        return redirect(route('blood-types.index'))->with(['message' => 'Data sucessfully added!']);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(BloodType $bloodType)
     {
-        //
+        return inertia('References/BloodType/ShowView',[
+            'bloodType' => $bloodType,
+        ]);
     }
 
     /**
@@ -51,7 +55,7 @@ class BloodTypesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**

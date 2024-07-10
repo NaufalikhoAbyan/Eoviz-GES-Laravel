@@ -1,0 +1,48 @@
+<script setup>
+import { Link } from '@inertiajs/vue3'
+import PageTitle from "@/Pages/Components/PageTitle.vue";
+const props = defineProps({
+    employeeTypes: Object
+});
+let count = 1
+</script>
+
+<template>
+    <div>
+        <div class="flex justify-between items-center">
+            <PageTitle page-name="Employee Type" description="List of all employee types"/>
+            <Link :href="route('employee-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
+        </div>
+        <div v-if="$page.props.flash.message" class="card-success">
+            {{ $page.props.flash.message }}
+        </div>
+        <div class="card">
+            <table class="table-auto w-full text-left">
+                <thead>
+                    <tr class="bg-gray-100 border-b">
+                        <th class="table-item">No.</th>
+                        <th class="table-item">Name</th>
+                        <th class="table-item">Is Permanent</th>
+                        <th class="table-item">Order</th>
+                        <th class="table-item">Status</th>
+                        <th class="table-item">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b" v-for="employeeType in props.employeeTypes" :key="employeeType.id">
+                        <td class="table-item">{{ count++ }}</td>
+                        <td class="table-item">{{ employeeType.name }}</td>
+                        <td class="table-item">{{ employeeType['is_permanent'] ? "Yes" : "No" }}</td>
+                        <td class="table-item">{{ employeeType.order }}</td>
+                        <td class="table-item">{{ employeeType.status }}</td>
+                        <td class="table-action-item"><td class="table-item2">
+                            <button class="act-btn bg-red-500">Delete</button>
+                            <button class="act-btn bg-yellow-500">Show</button>
+                            <button class="act-btn bg-green-500">Edit</button>
+                        </td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
