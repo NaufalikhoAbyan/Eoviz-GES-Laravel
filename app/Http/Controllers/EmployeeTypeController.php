@@ -46,7 +46,9 @@ class EmployeeTypeController extends Controller
      */
     public function show(EmployeeType $employeeType)
     {
-        //
+        return inertia('References/EmployeeType/ShowView', [
+            'employeeType' => $employeeType
+        ]);
     }
 
     /**
