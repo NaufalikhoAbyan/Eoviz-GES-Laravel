@@ -4,7 +4,9 @@ import { Link } from "@inertiajs/vue3";
 const props = defineProps({
     title: String,
     link: String,
-    navState: Boolean
+    src: String,
+    navState: Boolean,
+    parent: Boolean
 });
 </script>
 
@@ -12,10 +14,10 @@ const props = defineProps({
     <Link :href="route(props.link)">
         <div class="flex items-center px-4 py-4 border-b-2">
             <div class="size-6">
-                <slot/>
+                <img :src="props.src" alt="" class="w-full">
             </div>
             <Transition>
-                <div v-if="props.navState" class="overflow-hidden max-w-48">
+                <div v-if="props.parent ? props.navState : true" class="overflow-hidden max-w-48">
                     <p class="ml-6 flex-grow text-nowrap">{{ props.title }}</p>
                 </div>
             </Transition>
