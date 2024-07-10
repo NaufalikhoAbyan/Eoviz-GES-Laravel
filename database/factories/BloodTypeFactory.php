@@ -17,8 +17,7 @@ class BloodTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-            'name'=> fake()->bloodType(),
+            'name'=> fake()->unique()->bloodType(),
             'status'  => fake()->randomElement(['Active','Not Active']),
             'description' => fake()->text(),
         ];

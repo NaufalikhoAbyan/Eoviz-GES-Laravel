@@ -12,7 +12,6 @@ class BloodTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
-        BloodType::factory(10)->create();
+        BloodType::factory(4)->create();
     }
 }
