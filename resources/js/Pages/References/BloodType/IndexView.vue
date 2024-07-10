@@ -4,7 +4,7 @@ import PageTitle from "@/Pages/Components/PageTitle.vue";
 const props = defineProps({
         bloodTypes: Object
     });
-    let count = 1
+    let count = 1;
 
 </script>
 

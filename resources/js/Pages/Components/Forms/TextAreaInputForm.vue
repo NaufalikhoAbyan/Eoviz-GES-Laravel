@@ -3,8 +3,8 @@ const props = defineProps({
     title: String,
     name: String,
     errorMessage: String
-})
-const model = defineModel()
+});
+const model = defineModel();
 </script>
 
 <template>

@@ -13,5 +13,6 @@ class EmployeeType extends Model
         'is_permanent',
         'order',
         'status',
+        'description'
     ];
 }

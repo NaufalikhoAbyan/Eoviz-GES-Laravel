@@ -4,7 +4,7 @@ const props = defineProps({
     label: String,
     id: String,
     value: String
-})
+});
 const radioName = inject("radioName");
 const model = inject("model");
 </script>

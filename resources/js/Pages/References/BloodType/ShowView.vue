@@ -5,7 +5,7 @@ import DetailsData from '@/Pages/Components/Details/DetailsData.vue';
 
 const props = defineProps({
         bloodType: Object
-})
+});
 </script>
 
 <template>

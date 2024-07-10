@@ -5,7 +5,7 @@ import DetailsData from "@/Pages/Components/Details/DetailsData.vue";
 
 const props = defineProps({
     employeeType: Object
-})
+});
 </script>
 
 <template>
@@ -19,6 +19,7 @@ const props = defineProps({
             <DetailsData title="Is Permanent" :value="props.employeeType['is_permanent']" :boolean="true"/>
             <DetailsData title="order" :value="props.employeeType.order"/>
             <DetailsData title="status" :value="props.employeeType.status"/>
+            <DetailsData title="description" :value="props.employeeType.description"/>
         </div>
     </div>
 </template>

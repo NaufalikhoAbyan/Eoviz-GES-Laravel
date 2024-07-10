@@ -20,7 +20,8 @@ class EmployeeTypeFactory extends Factory
             'name' => fake()->name(),
             'is_permanent' => fake()->boolean(75),
             'order' => fake()->numberBetween(1, 100),
-            'status' => fake()->randomElement(['Active', 'Not Active'])
+            'status' => fake()->randomElement(['Active', 'Not Active']),
+            'description' => fake()->paragraph()
         ];
     }
 }
