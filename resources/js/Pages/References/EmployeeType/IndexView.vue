@@ -10,7 +10,7 @@ let count = 1
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Employee Type" description="List of all employee types"/>
+            <PageTitle page-name="Employee Types" description="List of all employee types"/>
             <Link :href="route('employee-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
@@ -36,7 +36,7 @@ let count = 1
                         <td class="table-item">{{ employeeType.order }}</td>
                         <td class="table-item">{{ employeeType.status }}</td>
                         <td class="table-action-item">
-                            <button class="act-btn bg-green-500">Edit</button>
+                            <Link :href="route('employee-types.edit', employeeType.id)"><button class="act-btn bg-green-500">Edit</button></Link>
                             <Link :href="route('employee-types.show', employeeType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
                             <button class="act-btn bg-red-500">Delete</button>
                         </td>

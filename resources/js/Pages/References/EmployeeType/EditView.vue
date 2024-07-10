@@ -1,27 +1,29 @@
 <script setup>
-import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
-import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
-import FormCard from "@/Pages/Components/Forms/FormCard.vue";
-import PageTitle from "@/Pages/Components/PageTitle.vue";
-import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
+import { useForm } from "@inertiajs/vue3";
 import RadioInputForm from "@/Pages/Components/Forms/RadioInputForm.vue";
+import PageTitle from "@/Pages/Components/PageTitle.vue";
 import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
-import { useForm } from '@inertiajs/vue3'
+import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
+import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
+import FormCard from "@/Pages/Components/Forms/FormCard.vue";
+import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
+
 const props = defineProps({
+    employeeType: Object,
     errors: Object
 })
 
 const form = useForm({
-    name: null,
-    is_permanent: null,
-    order: null,
-    status: null,
-    description: null
+    'name': props.employeeType.name,
+    'is_permanent': props.employeeType.is_permanent,
+    'order': props.employeeType.order,
+    'status': props.employeeType.status,
+    'description': props.employeeType.description
 })
 </script>
 
 <template>
-    <FormCard save-route="employee-types.store" :form="form" method="POST">
+    <FormCard save-route="employee-types.update" :parameter="props.employeeType.id" :form="form" method="PUT">
         <PageTitle page-name="Create Employee Type" description="Create a new employee type"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Is Permanent" name="is_permanent" :error-message="props.errors.is_permanent" v-model="form.is_permanent">
@@ -37,3 +39,4 @@ const form = useForm({
         <FormButtons cancel-route="employee-types.index"/>
     </FormCard>
 </template>
+

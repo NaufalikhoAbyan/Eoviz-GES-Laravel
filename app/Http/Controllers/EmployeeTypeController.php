@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EmployeeType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class EmployeeTypeController extends Controller
 {
@@ -56,7 +57,9 @@ class EmployeeTypeController extends Controller
      */
     public function edit(EmployeeType $employeeType)
     {
-        //
+        return inertia('References/EmployeeType/EditView', [
+            'employeeType' => $employeeType
+        ]);
     }
 
     /**
@@ -64,7 +67,14 @@ class EmployeeTypeController extends Controller
      */
     public function update(Request $request, EmployeeType $employeeType)
     {
-        //
+        $employeeType->update($request->validate([
+            'name' => ['required'],
+            'is_permanent' => ['required'],
+            'order' => ['required', 'integer', Rule::unique('employee_types')->ignore($employeeType->order)],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly changed!']);
     }
 
     /**
