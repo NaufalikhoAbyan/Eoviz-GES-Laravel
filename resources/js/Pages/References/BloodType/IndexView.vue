@@ -20,7 +20,7 @@ let count = 1;
         <div class="card">
             <table class="table-auto w-full text-left">
                 <thead>
-                    <tr class="bg-gray-100 border-b">
+                    <tr class="bg-red-100 border-b">
                         <th class="table-item">No.</th>
                         <th class="table-item">Name</th>
                         <th class="table-item">Status</th>
@@ -35,12 +35,11 @@ let count = 1;
                         <td class="table-item">{{ bloodType.status }}</td>
                         <td class="table-item">{{ bloodType.description }}</td>
                         <td class="table-action-item">
-                        <ActionButtons route-name="blood-types" :parameter="bloodType.id" />
+                            <ActionButtons route-name="blood-types" :parameter="bloodType.id" />
                         </td>
                     </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </template>
