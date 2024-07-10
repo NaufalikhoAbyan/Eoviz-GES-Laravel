@@ -35,11 +35,11 @@ let count = 1
                         <td class="table-item">{{ employeeType['is_permanent'] ? "Yes" : "No" }}</td>
                         <td class="table-item">{{ employeeType.order }}</td>
                         <td class="table-item">{{ employeeType.status }}</td>
-                        <td class="table-action-item"><td class="table-item2">
-                            <button class="act-btn bg-red-500">Delete</button>
-                            <button class="act-btn bg-yellow-500">Show</button>
+                        <td class="table-action-item">
                             <button class="act-btn bg-green-500">Edit</button>
-                        </td></td>
+                            <Link :href="route('employee-types.show', employeeType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
+                            <button class="act-btn bg-red-500">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
