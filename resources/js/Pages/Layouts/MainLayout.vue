@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import ArrorRigth from "@/Pages/Components/Icons/ArrorRight.vue";
+import MenuItem from "@/Pages/Components/Navigation/MenuItem.vue";
+import NavigationSidebar from "@/Pages/Components/Navigation/NavigationSidebar.vue";
 const isExpanded = ref(false);
 </script>
 
@@ -15,6 +17,15 @@ const isExpanded = ref(false);
                     <ArrorRigth class="text-white transition-all duration-500 ease-in-out h-6" :class="[isExpanded ? 'rotate-180' : 'rotate-0']"/>
                 </button>
             </div>
+            <NavigationSidebar>
+                <template v-slot:parent>
+                    <MenuItem title="References" link="references.index" :nav-state="isExpanded" src="/images/assets/menus/small-content.png" :parent="true"/>
+                </template>
+                <template v-slot:child>
+                    <MenuItem title="Employee Types" link="employee-types.index" :nav-state="isExpanded" src="/images/assets/menus/employee.png"/>
+                    <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
+                </template>
+            </NavigationSidebar>
         </div>
         <div class="py-4 px-16 flex-grow">
             <slot/>
