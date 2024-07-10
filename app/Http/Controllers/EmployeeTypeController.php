@@ -39,7 +39,7 @@ class EmployeeTypeController extends Controller
             'status' => ['required'],
             'description' => ['required']
         ]));
-        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly added!']);
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
@@ -70,11 +70,11 @@ class EmployeeTypeController extends Controller
         $employeeType->update($request->validate([
             'name' => ['required'],
             'is_permanent' => ['required'],
-            'order' => ['required', 'integer', Rule::unique('employee_types')->ignore($employeeType->order)],
+            'order' => ['required', 'integer', Rule::unique('employee_types')->ignore($employeeType->order, 'order')],
             'status' => ['required'],
             'description' => ['required']
         ]));
-        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly changed!']);
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
@@ -83,6 +83,6 @@ class EmployeeTypeController extends Controller
     public function destroy(EmployeeType $employeeType)
     {
         $employeeType->delete();
-        return redirect(route('employee-types.index'))->with(['message' => 'Data successfuly deleted!']);
+        return redirect(route('employee-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
