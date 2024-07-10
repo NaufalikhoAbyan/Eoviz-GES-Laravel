@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\EmployeeTypeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
+use App\Http\Controllers\EmployeeTypeController;
 
 Route::get('/', function () {
     return inertia('IndexView');
@@ -13,3 +14,4 @@ Route::get('/about', function () {
 
 Route::resource('/blood-types', BloodTypesController::class);
 Route::resource('/employee-types', EmployeeTypeController::class);
+Route::resource('/religions', ReligionController::class);
