@@ -18,7 +18,7 @@ const isExpanded = ref(false);
                 <img src="/images/assets/menus/employee.png" alt=""/>
             </MenuItem>
             <MenuItem link="blood-types.index" title="Blood Types" :nav-state="isExpanded">
-                <img src="/images/assets/menus/employee.png" alt=""/>
+                <img src="/images/assets/menus/small-blood-type.png" alt=""/>
             </MenuItem>
         </div>
         <div class="py-4 px-16 w-full">

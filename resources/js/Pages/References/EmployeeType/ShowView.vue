@@ -20,7 +20,5 @@ const props = defineProps({
             <DetailsData title="order" :value="props.employeeType.order"/>
             <DetailsData title="status" :value="props.employeeType.status"/>
         </div>
-        <div>
-        </div>
     </div>
 </template>

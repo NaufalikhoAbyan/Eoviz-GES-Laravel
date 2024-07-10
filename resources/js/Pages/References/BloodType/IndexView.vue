@@ -35,8 +35,8 @@ const props = defineProps({
                             <td class="table-item">{{ bloodType.status }}</td>
                             <td class="table-item">{{ bloodType.description }}</td>
                             <td class="table-action-item">
-                                <Link :href="route('blood-types.show', bloodType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
                                 <button class="act-btn bg-green-500">Edit</button>
+                                <Link :href="route('blood-types.show', bloodType.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
                                 <button class="act-btn bg-red-500">Delete</button>
                             </td>
                         </tr>
