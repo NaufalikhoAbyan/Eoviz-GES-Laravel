@@ -5,19 +5,19 @@ const props = defineProps({
     parameter: Object,
     method: String,
     form: useForm
-})
+});
 
 function submit(routeName, parameter, method, form) {
     switch(method) {
         case "POST":
-            form.post(route(routeName, parameter), form)
-            break
+            form.post(route(routeName, parameter), form);
+            break;
         case "PUT":
-            form.put(route(routeName, parameter), form)
-            break
+            form.put(route(routeName, parameter), form);
+            break;
         case "DELETE":
-            form.delete(route(routeName, parameter), form)
-            break
+            form.delete(route(routeName, parameter), form);
+            break;
     }
 }
 </script>

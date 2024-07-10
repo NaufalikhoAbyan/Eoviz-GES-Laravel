@@ -1,11 +1,11 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3';
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     employeeTypes: Object
 });
-let count = 1
+let count = 1;
 </script>
 
 <template>

@@ -11,7 +11,7 @@ import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
 const props = defineProps({
     employeeType: Object,
     errors: Object
-})
+});
 
 const form = useForm({
     'name': props.employeeType.name,
@@ -19,7 +19,7 @@ const form = useForm({
     'order': props.employeeType.order,
     'status': props.employeeType.status,
     'description': props.employeeType.description
-})
+});
 </script>
 
 <template>

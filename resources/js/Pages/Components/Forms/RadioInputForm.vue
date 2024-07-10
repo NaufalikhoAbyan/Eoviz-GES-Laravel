@@ -4,10 +4,10 @@ const props = defineProps({
     title: String,
     name: String,
     errorMessage: String
-})
-const model = defineModel()
-provide("model", model)
-provide("radioName", props.name)
+});
+const model = defineModel();
+provide("model", model);
+provide("radioName", props.name);
 </script>
 
 <template>
