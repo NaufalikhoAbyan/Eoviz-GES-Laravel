@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BloodType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BloodTypesController extends Controller
 {
@@ -32,12 +33,11 @@ class BloodTypesController extends Controller
     public function store(Request $request)
     {
         BloodType::create($request->validate([
-            'name' => ['required','unique:blood_types'],
+            'name' => ['required', 'unique:blood_types'],
             'status' => ['required'],
             'description' => ['required'],
-
         ]));
-        return redirect(route('blood-types.index'))->with(['message' => 'Data sucessfully added!']);
+        return redirect(route('blood-types.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
@@ -53,24 +53,32 @@ class BloodTypesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(BloodType $bloodType)
     {
-
+        return inertia('References/BloodType/EditView',[
+            'bloodType' => $bloodType,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, BloodType $bloodType)
     {
-        //
+        $bloodType->update($request->validate([
+            'name' => ['required'],
+            'status' => ['required'],
+            'description' => ['required', Rule::unique('blood_types')->ignore($bloodType->name, 'name')]
+        ]));
+        return redirect(route('blood-types.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(BloodType $bloodType)
     {
-        //
+        $bloodType->delete();
+        return redirect(route('blood-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

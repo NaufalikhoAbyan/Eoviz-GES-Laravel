@@ -1,25 +1,27 @@
 <script setup>
-import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
-import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
-import FormCard from "@/Pages/Components/Forms/FormCard.vue";
-import PageTitle from "@/Pages/Components/PageTitle.vue";
-import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
+import { useForm } from "@inertiajs/vue3";
 import RadioInputForm from "@/Pages/Components/Forms/RadioInputForm.vue";
+import PageTitle from "@/Pages/Components/PageTitle.vue";
 import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
-import { useForm } from '@inertiajs/vue3';
+import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
+import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
+import FormCard from "@/Pages/Components/Forms/FormCard.vue";
+import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
+
 const props = defineProps({
-    errors: Object
+    bloodType: Object,
+    errors: Object,
 });
 
 const form = useForm({
-    name: null,
-    status: null,
-    description: null
+    'name' : props.bloodType.name,
+    'status' : props.bloodType.status,
+    'description' : props.bloodType.description
 });
 </script>
 
 <template>
-    <FormCard save-route="blood-types.store" :form="form" method="POST">
+    <FormCard save-route="blood-types.update" :parameter="props.bloodType.id" :form="form" method="PUT">
         <PageTitle page-name="Create Blood Type" description="Create a new blood type"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
