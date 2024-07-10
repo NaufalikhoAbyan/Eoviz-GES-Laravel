@@ -23,7 +23,7 @@ class ReligionController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/Religion/CreateView');
     }
 
     /**
@@ -31,7 +31,12 @@ class ReligionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Religion::create($request->validate([
+            'name' => ['required', 'unique:blood_types'],
+            'status' => ['required'],
+            'description' => ['required'],
+        ]));
+        return redirect(route(religions.index))->with(['message' => 'Data successfully added!']);
     }
 
     /**
