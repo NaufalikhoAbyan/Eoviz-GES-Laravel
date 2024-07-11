@@ -5,7 +5,6 @@ use App\Http\Controllers\ReferenceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
-use App\Http\Controllers\EmployeeTypeController;
 
 Route::get('/', function () {
     return inertia('IndexView');

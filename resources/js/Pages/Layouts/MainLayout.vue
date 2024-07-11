@@ -24,6 +24,7 @@ const isExpanded = ref(false);
                 <template v-slot:child>
                     <MenuItem title="Employee Types" link="employee-types.index" :nav-state="isExpanded" src="/images/assets/menus/employee.png"/>
                     <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
+                    <MenuItem title="Religions" link="religions.index" :nav-state="isExpanded" src="/images/assets/menus/small-relegion.png"/>
                 </template>
             </NavigationSidebar>
         </div>
