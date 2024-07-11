@@ -11,7 +11,7 @@ let count = 1;
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Employee Types" description="List of all employee types"/>
+            <PageTitle page-name="Employee Types" description="List of all employee type"/>
             <Link :href="route('employee-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">

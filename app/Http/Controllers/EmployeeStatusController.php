@@ -12,7 +12,10 @@ class EmployeeStatusController extends Controller
      */
     public function index()
     {
-        //
+        $employeeStatuses = EmployeeStatus::all();
+        return inertia('References/EmployeeStatus/IndexView', [
+            'employeeStatuses' => $employeeStatuses
+        ]);
     }
 
     /**

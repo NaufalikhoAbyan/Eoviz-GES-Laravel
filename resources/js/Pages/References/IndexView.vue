@@ -7,5 +7,6 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
     <div class="flex gap-12">
         <NavigationCard link="employee-types.index" src="/images/assets/menus/employee.png" title="Empoloyee Types"/>
         <NavigationCard link="blood-types.index" src="/images/assets/menus/small-blood-type.png" title="Blood Types"/>
+        <NavigationCard link="employee-statuses.index" src="/images/assets/menus/small-employee-status.png" title="Employee Statuses"/>
     </div>
 </template>
