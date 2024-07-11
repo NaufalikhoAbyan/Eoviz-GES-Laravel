@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EmployeeStatus;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class EmployeeStatusController extends Controller
 {
@@ -56,7 +57,9 @@ class EmployeeStatusController extends Controller
      */
     public function edit(EmployeeStatus $employeeStatus)
     {
-        //
+        return inertia('References/EmployeeStatus/EditView', [
+            'employeeStatus' => $employeeStatus
+        ]);
     }
 
     /**
@@ -64,7 +67,14 @@ class EmployeeStatusController extends Controller
      */
     public function update(Request $request, EmployeeStatus $employeeStatus)
     {
-        //
+        $employeeStatus->update($request->validate([
+            'name' => ['required'],
+            'is_active' => ['required'],
+            'order' => ['required', 'integer', Rule::unique('employee_statuses')->ignore($employeeStatus->order, 'order')],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('employee-statuses.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
