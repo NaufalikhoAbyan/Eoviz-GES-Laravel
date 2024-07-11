@@ -46,7 +46,9 @@ class EmployeeStatusController extends Controller
      */
     public function show(EmployeeStatus $employeeStatus)
     {
-        //
+        return inertia('References/EmployeeStatus/ShowView', [
+            'employeeStatus' => $employeeStatus
+        ]);
     }
 
     /**
