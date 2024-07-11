@@ -9,7 +9,8 @@ export default [
             "node_modules/**",
             "vendor/**",
             'public/build/**',
-            'postcss.config.js'
+            'postcss.config.js',
+            'resources/js/Pages/Components/Forms/FormCard.vue'
         ]
     },
     {
