@@ -23,7 +23,7 @@ class EmployeeStatusController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/EmployeeStatus/CreateView');
     }
 
     /**
@@ -31,7 +31,14 @@ class EmployeeStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        EmployeeStatus::create($request->validate([
+            'name' => ['required'],
+            'is_active' => ['required'],
+            'order' => ['required', 'integer', 'unique:employee_statuses'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('employee-statuses.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
