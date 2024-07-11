@@ -66,9 +66,9 @@ class BloodTypesController extends Controller
     public function update(Request $request, BloodType $bloodType)
     {
         $bloodType->update($request->validate([
-            'name' => ['required'],
+            'name' => ['required', Rule::unique('blood_types')->ignore($bloodType->name, 'name')],
             'status' => ['required'],
-            'description' => ['required', Rule::unique('blood_types')->ignore($bloodType->name, 'name')]
+            'description' => ['required']
         ]));
         return redirect(route('blood-types.index'))->with(['message' => 'Data successfully changed!']);
     }

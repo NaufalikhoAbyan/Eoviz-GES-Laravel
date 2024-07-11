@@ -14,7 +14,7 @@ let count = 1;
             <PageTitle page-name="Religion" description="List of all religions"/>
             <Link :href="route('religions.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
-        <div v-if="$page.props.flash.message" class="card-succcess">
+        <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
         </div>
         <div class="card">

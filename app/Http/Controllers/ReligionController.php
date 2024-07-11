@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Religion;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ReligionController extends Controller
 {
@@ -32,11 +33,11 @@ class ReligionController extends Controller
     public function store(Request $request)
     {
         Religion::create($request->validate([
-            'name' => ['required', 'unique:blood_types'],
+            'name' => ['required', 'unique:religions'],
             'status' => ['required'],
             'description' => ['required'],
         ]));
-        return redirect(route(religions.index))->with(['message' => 'Data successfully added!']);
+        return redirect(route('religions.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
@@ -54,7 +55,9 @@ class ReligionController extends Controller
      */
     public function edit(Religion $religion)
     {
-
+        return inertia('References/Religion/EditView',[
+            'religion' => $religion
+        ]);
     }
 
     /**
@@ -62,7 +65,12 @@ class ReligionController extends Controller
      */
     public function update(Request $request, Religion $religion)
     {
-        //
+        $religion->update($request->validate([
+            'name' => ['required', Rule::unique('religions')->ignore($religion->name, 'name')],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('religions.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
