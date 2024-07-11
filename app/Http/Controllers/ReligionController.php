@@ -44,7 +44,9 @@ class ReligionController extends Controller
      */
     public function show(Religion $religion)
     {
-        //
+        return inertia('References/Religion/ShowView',[
+            'religion' => $religion
+        ]);
     }
 
     /**
@@ -52,7 +54,7 @@ class ReligionController extends Controller
      */
     public function edit(Religion $religion)
     {
-        //
+
     }
 
     /**
