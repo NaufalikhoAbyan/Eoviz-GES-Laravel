@@ -82,6 +82,7 @@ class EmployeeStatusController extends Controller
      */
     public function destroy(EmployeeStatus $employeeStatus)
     {
-        //
+        $employeeStatus->delete();
+        return redirect(route('employee-statuses.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
