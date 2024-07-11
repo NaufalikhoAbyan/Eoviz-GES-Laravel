@@ -78,6 +78,7 @@ class ReligionController extends Controller
      */
     public function destroy(Religion $religion)
     {
-        //
+        $religion->delete();
+        return redirect(route('religions.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
