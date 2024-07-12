@@ -12,7 +12,10 @@ class MaritalStatusController extends Controller
      */
     public function index()
     {
-        //
+        $maritalStatuses = MaritalStatus::all();
+        return inertia('References/MaritalStatus/IndexView', [
+            'maritalStatuses' => $maritalStatuses,
+        ]);
     }
 
     /**
