@@ -19,7 +19,7 @@ Route::resources([
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'employee-statuses' => EmployeeStatusController::class,
-    'grade-types' => GradeTypeController::class
+    'grade-types' => GradeTypeController::class,
     'religions' => ReligionController::class,
 ]);
 

@@ -14,7 +14,7 @@ class GradeTypeController extends Controller
     public function index()
     {
         $gradeTypes = GradeType::all();
-        return inertia('References/GradeTypes/IndexView', [
+        return inertia('References/GradeType/IndexView', [
             'gradeTypes' => $gradeTypes
         ]);
     }
@@ -24,7 +24,7 @@ class GradeTypeController extends Controller
      */
     public function create()
     {
-        return inertia('References/GradeTypes/CreateView');
+        return inertia('References/GradeType/CreateView');
     }
 
     /**
@@ -48,7 +48,7 @@ class GradeTypeController extends Controller
      */
     public function show(GradeType $gradeType)
     {
-        return inertia('References/GradeTypes/ShowView', [
+        return inertia('References/GradeType/ShowView', [
             'gradeType' => $gradeType
         ]);
     }
@@ -58,7 +58,7 @@ class GradeTypeController extends Controller
      */
     public function edit(GradeType $gradeType)
     {
-        return inertia('References/GradeTypes/EditView', [
+        return inertia('References/GradeType/EditView', [
             'gradeType' => $gradeType
         ]);
     }
