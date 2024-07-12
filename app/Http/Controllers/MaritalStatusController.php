@@ -79,6 +79,7 @@ class MaritalStatusController extends Controller
      */
     public function destroy(MaritalStatus $maritalStatus)
     {
-        //
+        $maritalStatus->delete();
+        return redirect(route('marital-statuses.index'))->with(['message' => 'Data successfully deleted']);
     }
 }
