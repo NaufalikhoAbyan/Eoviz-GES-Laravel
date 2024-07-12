@@ -17,7 +17,10 @@ class MaritalStatusFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'is_married' => fake()->boolean(),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
+            'description' => fake()->text()
         ];
     }
 }

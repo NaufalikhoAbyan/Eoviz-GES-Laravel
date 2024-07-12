@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MaritalStatus;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class MaritalStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        MaritalStatus::factory(5)->create();
     }
 }
