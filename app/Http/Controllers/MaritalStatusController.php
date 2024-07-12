@@ -45,7 +45,9 @@ class MaritalStatusController extends Controller
      */
     public function show(MaritalStatus $maritalStatus)
     {
-        //
+        return inertia('References/MaritalStatus/ShowView', [
+            'maritalStatus' => $maritalStatus
+        ]);
     }
 
     /**
