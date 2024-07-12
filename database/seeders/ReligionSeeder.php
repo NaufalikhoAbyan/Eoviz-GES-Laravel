@@ -2,16 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\BloodType;
+use App\Models\Religion;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class BloodTypeSeeder extends Seeder
+class ReligionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        BloodType::factory(4)->create();
+        Religion::factory(7)->create();
     }
 }

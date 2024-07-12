@@ -4,6 +4,7 @@ use App\Http\Controllers\EmployeeStatusController;
 use App\Http\Controllers\EmployeeTypeController;
 use App\Http\Controllers\ReferenceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
 
 Route::get('/', function () {
@@ -16,7 +17,9 @@ Route::get('/about', function () {
 Route::resources([
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
-    'employee-statuses' => EmployeeStatusController::class,
+    'religions' => ReligionController::class,
+    'employee-statuses' => EmployeeStatusController::class
+
 ]);
 
 Route::get('references', ReferenceController::class)->name('references.index');
