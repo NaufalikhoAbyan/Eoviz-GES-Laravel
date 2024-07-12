@@ -23,7 +23,7 @@ class WorkHourController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/WorkHour/CreateView');
     }
 
     /**
@@ -31,7 +31,15 @@ class WorkHourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        WorkHour::create($request->validate([
+            'name' => ['required'],
+            'hour' => ['required', 'integer'],
+            'holiday' => ['required'],
+            'status' => ['required'],
+            'description' => ['required'],
+            'is_locked' => ['required']
+        ]));
+        return redirect(route('work-hours.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
