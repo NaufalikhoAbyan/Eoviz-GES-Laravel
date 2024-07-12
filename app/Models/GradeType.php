@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class GradeType extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'level',
+        'code',
+        'name',
+        'order',
+        'status',
+        'description',
+    ];
 }
