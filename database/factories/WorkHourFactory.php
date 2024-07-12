@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Religion>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\WorkHour>
  */
-class ReligionFactory extends Factory
+class WorkHourFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,12 @@ class ReligionFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->randomElement(['Islam','Kristen','Hindu','Budha','Kong Hu Chu','Kristen Katolik','Kristen Protestan']),
+            'name' => fake()->name(),
+            'hour' => fake()->numberBetween(1, 24),
+            'holiday' => fake()->text(),
             'status' => fake()->randomElement(['Active','Not Active']),
-            'description' => fake()->text()
+            'description' => fake()->text(),
+            'is_locked' => fake()->boolean(75)
         ];
     }
 }
