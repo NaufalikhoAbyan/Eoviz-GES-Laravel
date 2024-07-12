@@ -55,7 +55,9 @@ class MaritalStatusController extends Controller
      */
     public function edit(MaritalStatus $maritalStatus)
     {
-        //
+        return inertia('References/MaritalStatus/EditView', [
+            'maritalStatus' => $maritalStatus
+        ]);
     }
 
     /**
@@ -63,7 +65,13 @@ class MaritalStatusController extends Controller
      */
     public function update(Request $request, MaritalStatus $maritalStatus)
     {
-        //
+        $maritalStatus->update($request->validate([
+            'name' => ['required'],
+            'is_married' => ['required'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('marital-statuses.index'))->with(['message' => 'Data successfully changed']);
     }
 
     /**
