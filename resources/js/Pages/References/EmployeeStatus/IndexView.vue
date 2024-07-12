@@ -26,7 +26,7 @@ let count = 1;
                     <th class="table-item">Is Active</th>
                     <th class="table-item">Order</th>
                     <th class="table-item">Status</th>
-                    <th class="table-item">Action</th>
+                    <th class="table-item w-1">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@ let count = 1;
                     <td class="table-item">{{ employeeStatus['is_active'] ? "Yes" : "No" }}</td>
                     <td class="table-item">{{ employeeStatus.order }}</td>
                     <td class="table-item">{{ employeeStatus.status }}</td>
-                    <td class="table-action-item">
+                    <td class="table-action-item w-fit">
                         <ActionButtons route-name="employee-statuses" :parameter="employeeStatus.id"/>
                     </td>
                 </tr>

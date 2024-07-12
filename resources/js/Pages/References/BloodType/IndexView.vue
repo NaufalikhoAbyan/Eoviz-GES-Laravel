@@ -25,7 +25,7 @@ let count = 1;
                         <th class="table-item">Name</th>
                         <th class="table-item">Status</th>
                         <th class="table-item">Description</th>
-                        <th class="table-item">Action</th>
+                        <th class="table-item w-1">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,7 @@ let count = 1;
                         <td class="table-item">{{ bloodType.name }}</td>
                         <td class="table-item">{{ bloodType.status }}</td>
                         <td class="table-item">{{ bloodType.description }}</td>
-                        <td class="table-action-item">
+                        <td class="table-action-item w-fit">
                         <ActionButtons route-name="blood-types" :parameter="bloodType.id" />
                         </td>
                     </tr>
