@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('grade_types', function (Blueprint $table) {
             $table->id();
+            $table->integer('level')->unique();
+            $table->integer('code')->unique();
+            $table->string('name', 255);
+            $table->integer('order')->unique();
+            $table->enum('status', ['Active', 'Not Active']);
+            $table->string('description', 255);
             $table->timestamps();
         });
     }
