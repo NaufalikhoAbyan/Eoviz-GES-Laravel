@@ -11,14 +11,14 @@ import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
 const props = defineProps({
     maritalStatus: Object,
     errors: Object
-})
+});
 
 const form = useForm({
     name: props.maritalStatus.name,
     is_married: props.maritalStatus.is_married,
     status: props.maritalStatus.status,
     description: props.maritalStatus.description
-})
+});
 </script>
 
 <template>

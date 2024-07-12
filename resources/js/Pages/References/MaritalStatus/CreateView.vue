@@ -10,14 +10,14 @@ import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
 
 const props = defineProps({
     errors: Object
-})
+});
 
 const form = useForm({
     name: null,
     is_married: null,
     status: null,
     description: null
-})
+});
 </script>
 
 <template>

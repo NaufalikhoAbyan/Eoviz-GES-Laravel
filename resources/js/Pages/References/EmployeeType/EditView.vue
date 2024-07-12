@@ -14,11 +14,11 @@ const props = defineProps({
 });
 
 const form = useForm({
-    'name': props.employeeType.name,
-    'is_permanent': props.employeeType.is_permanent,
-    'order': props.employeeType.order,
-    'status': props.employeeType.status,
-    'description': props.employeeType.description
+    name: props.employeeType.name,
+    is_permanent: props.employeeType.is_permanent,
+    order: props.employeeType.order,
+    status: props.employeeType.status,
+    description: props.employeeType.description
 });
 </script>
 

@@ -14,9 +14,9 @@ const props = defineProps({
 });
 
 const form = useForm({
-    'name' : props.bloodType.name,
-    'status' : props.bloodType.status,
-    'description' : props.bloodType.description
+    name : props.bloodType.name,
+    status : props.bloodType.status,
+    description : props.bloodType.description
 });
 </script>
 

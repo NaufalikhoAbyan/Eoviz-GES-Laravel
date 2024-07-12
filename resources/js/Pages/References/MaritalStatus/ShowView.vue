@@ -5,7 +5,7 @@ import {Link} from "@inertiajs/vue3";
 
 const props = defineProps({
     maritalStatus: Object
-})
+});
 </script>
 
 <template>
