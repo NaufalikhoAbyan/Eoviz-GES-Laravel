@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('marital_statuses', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 255);
+            $table->boolean('is_married');
+            $table->enum('status', ['Active', 'Not Active']);
+            $table->string('description', 255);
             $table->timestamps();
         });
     }
