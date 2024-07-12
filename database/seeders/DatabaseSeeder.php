@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BloodTypeSeeder::class,
             ReligionSeeder::class,
-            EmployeeTypeSeeder::class
+            EmployeeTypeSeeder::class,
+            EmployeeStatusSeeder::class
         ]);
     }
 }
