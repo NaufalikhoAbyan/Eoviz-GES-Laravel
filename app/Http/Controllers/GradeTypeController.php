@@ -23,7 +23,7 @@ class GradeTypeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/GradeTypes/CreateView');
     }
 
     /**
@@ -31,7 +31,15 @@ class GradeTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        GradeType::create($request->validate([
+            'level' => ['required', 'integer', 'unique:grade_types'],
+            'code' => ['required', 'integer', 'unique:grade_types'],
+            'name' => ['required'],
+            'order' => ['required', 'integer', 'unique:grade_types'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect()->route('grade-types.index')->with(['message' => 'Data succesfully added!']);
     }
 
     /**
