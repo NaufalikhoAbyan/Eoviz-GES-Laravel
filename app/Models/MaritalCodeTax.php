@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class MaritalCodeTax extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'code',
+        'name',
+        'order',
+        'description',
+    ];
 }
