@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Database\Seeders\BloodTypeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +21,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             BloodTypeSeeder::class,
-            EmployeeTypeSeeder::class
+            EmployeeTypeSeeder::class,
+            EmployeeStatusSeeder::class
         ]);
     }
 }

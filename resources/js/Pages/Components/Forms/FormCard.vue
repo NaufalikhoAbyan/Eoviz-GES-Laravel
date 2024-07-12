@@ -2,9 +2,9 @@
 import { useForm } from "@inertiajs/vue3";
 const props = defineProps({
     saveRoute: String,
-    parameter: Object,
+    parameter: Number,
     method: String,
-    form: useForm
+    form: Object
 });
 
 function submit(routeName, parameter, method, form) {
