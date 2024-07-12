@@ -47,7 +47,9 @@ class GradeTypeController extends Controller
      */
     public function show(GradeType $gradeType)
     {
-        //
+        return inertia('References/GradeTypes/ShowView', [
+            'gradeType' => $gradeType
+        ]);
     }
 
     /**
