@@ -84,6 +84,7 @@ class GradeTypeController extends Controller
      */
     public function destroy(GradeType $gradeType)
     {
-        //
+        $gradeType->delete();
+        return redirect()->route('grade-types.index')->with(['message' => 'Data succesfully deleted!']);
     }
 }
