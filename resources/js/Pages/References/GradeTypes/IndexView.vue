@@ -4,7 +4,7 @@ import PageTitle from "@/Pages/Components/PageTitle.vue";
 import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     gradeTypes: Object
-})
+});
 let count = 1;
 </script>
 
