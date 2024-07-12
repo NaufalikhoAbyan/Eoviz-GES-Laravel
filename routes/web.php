@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeStatusController;
 use App\Http\Controllers\EmployeeTypeController;
+use App\Http\Controllers\MaritalCodeTaxController;
 use App\Http\Controllers\ReferenceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReligionController;
@@ -18,8 +19,8 @@ Route::resources([
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'religions' => ReligionController::class,
-    'employee-statuses' => EmployeeStatusController::class
-
+    'employee-statuses' => EmployeeStatusController::class,
+    'marital-code-taxes' => MaritalCodeTaxController::class
 ]);
 
 Route::get('references', ReferenceController::class)->name('references.index');

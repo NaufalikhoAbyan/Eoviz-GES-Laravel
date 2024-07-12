@@ -12,7 +12,10 @@ class MaritalCodeTaxController extends Controller
      */
     public function index()
     {
-        //
+        $maritalCodeTaxes = MaritalCodeTax::all();
+        return inertia('References/MaritalCodeTax/IndexView', [
+            'maritalCodeTaxes' => $maritalCodeTaxes
+        ]);
     }
 
     /**
