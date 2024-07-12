@@ -21,7 +21,7 @@ class EmployeeStatusFactory extends Factory
             'is_active' => fake()->boolean(75),
             'order' => fake()->numberBetween(1, 100),
             'status' => fake()->randomElement(['Active', 'Not Active']),
-            'description' => fake()->paragraph()
+            'description' => fake()->text()
         ];
     }
 }
