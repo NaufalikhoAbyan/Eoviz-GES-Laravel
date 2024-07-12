@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('marital_code_taxes', function (Blueprint $table) {
             $table->id();
+            $table->integer('code')->unique();
+            $table->string('name', 255);
+            $table->integer('order')->unique();
+            $table->string('description', 255);
             $table->timestamps();
         });
     }
