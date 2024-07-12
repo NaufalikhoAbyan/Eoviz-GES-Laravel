@@ -25,7 +25,8 @@ const isExpanded = ref(false);
                     <MenuItem title="Employee Types" link="employee-types.index" :nav-state="isExpanded" src="/images/assets/menus/employee.png"/>
                     <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
                     <MenuItem title="Religions" link="religions.index" :nav-state="isExpanded" src="/images/assets/menus/small-relegion.png"/>
-                    <MenuItem title="Employee Status" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
+                    <MenuItem title="Employee Statuses" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
+                    <MenuItem title="Work Hours" link="work-hours.index" :nav-state="isExpanded" src="https://demo.gthr.eoviz.com/assets/images/btn/small-work-hour.png"/>
                 </template>
             </NavigationSidebar>
         </div>

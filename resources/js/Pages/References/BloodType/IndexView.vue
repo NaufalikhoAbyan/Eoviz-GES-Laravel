@@ -11,7 +11,7 @@ let count = 1;
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Blood Types" description="List of all blood types"/>
+            <PageTitle page-name="Blood Types" description="List of all blood type"/>
             <Link :href="route('blood-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">

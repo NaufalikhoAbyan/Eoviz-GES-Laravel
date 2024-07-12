@@ -12,7 +12,10 @@ class WorkHourController extends Controller
      */
     public function index()
     {
-        //
+        $workHours = WorkHour::all();
+        return inertia('References/WorkHour/IndexView', [
+            'workHours' => $workHours
+        ]);
     }
 
     /**
