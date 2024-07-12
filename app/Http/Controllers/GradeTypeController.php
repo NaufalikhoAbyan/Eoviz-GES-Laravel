@@ -12,7 +12,10 @@ class GradeTypeController extends Controller
      */
     public function index()
     {
-        //
+        $gradeTypes = GradeType::all();
+        return inertia('References/GradeTypes/IndexView', [
+            'gradeTypes' => $gradeTypes
+        ]);
     }
 
     /**

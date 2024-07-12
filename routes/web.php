@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeStatusController;
 use App\Http\Controllers\EmployeeTypeController;
+use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BloodTypesController;
@@ -17,6 +18,7 @@ Route::resources([
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'employee-statuses' => EmployeeStatusController::class,
+    'grade-types' => GradeTypeController::class
 ]);
 
 Route::get('references', ReferenceController::class)->name('references.index');
