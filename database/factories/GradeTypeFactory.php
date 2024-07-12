@@ -17,7 +17,12 @@ class GradeTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'level' => fake()->numberBetween(1, 100),
+            'code' => fake()->numberBetween(1, 100),
+            'name' => fake()->name(),
+            'order' => fake()->numberBetween(1, 100),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
+            'description' => fake()->text()
         ];
     }
 }

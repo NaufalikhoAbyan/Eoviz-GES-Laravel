@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BloodTypeSeeder::class,
             EmployeeTypeSeeder::class,
-            EmployeeStatusSeeder::class
+            EmployeeStatusSeeder::class,
+            GradeTypeSeeder::class
         ]);
     }
 }
