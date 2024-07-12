@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GradeType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class GradeTypeController extends Controller
 {
@@ -57,7 +58,9 @@ class GradeTypeController extends Controller
      */
     public function edit(GradeType $gradeType)
     {
-        //
+        return inertia('References/GradeTypes/EditView', [
+            'gradeType' => $gradeType
+        ]);
     }
 
     /**
@@ -65,7 +68,15 @@ class GradeTypeController extends Controller
      */
     public function update(Request $request, GradeType $gradeType)
     {
-        //
+        $gradeType->update($request->validate([
+            'level' => ['required', 'integer', Rule::unique('grade_types')->ignore($gradeType->level, 'level')],
+            'code' => ['required', 'integer', Rule::unique('grade_types')->ignore($gradeType->code, 'code')],
+            'name' => ['required'],
+            'order' => ['required', 'integer', Rule::unique('grade_types')->ignore($gradeType->order, 'order')],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect()->route('grade-types.index')->with(['message' => 'Data succesfully changed!']);
     }
 
     /**
