@@ -19,14 +19,14 @@ const form = useForm({
 </script>
 
 <template>
-    <FormCard save-route="blood-types.store" :form="form" method="POST">
-        <PageTitle page-name="Create Blood Type" description="Create a new blood type"/>
+    <FormCard save-route="religions.store" :form="form" method="POST">
+        <PageTitle page-name="Create Religion" description="Create a new Religion"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>
             <RadioItem label="Not Active" id="not_active"/>
         </RadioInputForm>
         <TextAreaInputForm title="Description" name="description" :error-message="props.errors.description" v-model="form.description"/>
-        <FormButtons cancel-route="blood-types.index"/>
+        <FormButtons cancel-route="religions.index"/>
     </FormCard>
 </template>

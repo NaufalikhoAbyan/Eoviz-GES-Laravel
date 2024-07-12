@@ -4,7 +4,7 @@ import PageTitle from '@/Pages/Components/PageTitle.vue';
 import DetailsData from '@/Pages/Components/Details/DetailsData.vue';
 
 const props = defineProps({
-        bloodType: Object
+    bloodType: Object
 });
 </script>
 
