@@ -17,7 +17,10 @@ class MaritalCodeTaxFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'code' => fake()->numberBetween(1, 100),
+            'name' => fake()->name(),
+            'order' => fake()->numberBetween(1, 100),
+            'description' => fake()->text()
         ];
     }
 }
