@@ -23,7 +23,7 @@ class MaritalStatusController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/MaritalStatus/CreateView');
     }
 
     /**
@@ -31,7 +31,13 @@ class MaritalStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MaritalStatus::create($request->validate([
+            'name' => ['required'],
+            'is_married' => ['required'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+        return redirect(route('marital-statuses.index'))->with(['message' => 'Data successfully added']);
     }
 
     /**
