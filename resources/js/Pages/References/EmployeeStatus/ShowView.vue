@@ -1,6 +1,6 @@
 <script setup>
-import DetailsData from "@/Pages/Components/Details/DetailsData.vue";
 import {Link} from "@inertiajs/vue3";
+import DetailsData from "@/Pages/Components/Details/DetailsData.vue";
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 
 const props = defineProps({
@@ -17,9 +17,9 @@ const props = defineProps({
             </div>
             <DetailsData title="Name" :value="props.employeeStatus.name"/>
             <DetailsData title="Is Permanent" :value="props.employeeStatus['is_active']" :boolean="true"/>
-            <DetailsData title="order" :value="props.employeeStatus.order"/>
-            <DetailsData title="status" :value="props.employeeStatus.status"/>
-            <DetailsData title="description" :value="props.employeeStatus.description"/>
+            <DetailsData title="Order" :value="props.employeeStatus.order"/>
+            <DetailsData title="Status" :value="props.employeeStatus.status"/>
+            <DetailsData title="Description" :value="props.employeeStatus.description"/>
         </div>
     </div>
 

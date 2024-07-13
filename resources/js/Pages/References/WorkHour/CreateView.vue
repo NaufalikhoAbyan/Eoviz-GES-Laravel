@@ -37,6 +37,6 @@ const form = useForm({
         <CheckboxInputForm title="Is Locked" name="is_locked" :error-message="props.errors.is_locked" v-model="form.is_locked">
             <CheckboxItem label="" id="is_locked" value="1"/>
         </CheckboxInputForm>
-        <FormButtons cancel-route="religions.index"/>
+        <FormButtons cancel-route="work-hours.index"/>
     </FormCard>
 </template>
