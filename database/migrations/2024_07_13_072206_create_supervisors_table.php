@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('supervisors', function (Blueprint $table) {
             $table->id();
+            $table->string('name', length: 255);
+            $table->string('street', length: 255);
+            $table->string('country', length: 255);
+            $table->string('state', length: 255);
+            $table->string('city', length: 255);
+            $table->integer('postal_code');
+            $table->integer('phone');
+            $table->string('mobile', length: 255);
+            $table->string('email', length: 255);
+            $table->enum('status', ['Active', 'Not Active']);
+            $table->string('description', length: 255);
             $table->timestamps();
         });
     }
