@@ -83,6 +83,7 @@ class WorkHourController extends Controller
      */
     public function destroy(WorkHour $workHour)
     {
-
+        $workHour->delete();
+        return redirect(route('work-hours.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
