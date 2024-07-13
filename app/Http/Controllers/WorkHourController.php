@@ -47,7 +47,9 @@ class WorkHourController extends Controller
      */
     public function show(WorkHour $workHour)
     {
-        //
+        return inertia('References/WorkHour/ShowView', [
+            'workHour' => $workHour
+        ]);
     }
 
     /**
@@ -55,7 +57,9 @@ class WorkHourController extends Controller
      */
     public function edit(WorkHour $workHour)
     {
-        //
+        return inertia('References/WorkHour/EditView', [
+            'workHour' => $workHour
+        ]);
     }
 
     /**
@@ -63,7 +67,15 @@ class WorkHourController extends Controller
      */
     public function update(Request $request, WorkHour $workHour)
     {
-        //
+        $workHour->update($request->validate([
+            'name' => ['required'],
+            'hour' => ['required'],
+            'holiday' => ['required'],
+            'status' => ['required'],
+            'description' => ['required'],
+            'is_locked' => ['required']
+        ]));
+        return redirect(route('work-hours.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
@@ -71,6 +83,6 @@ class WorkHourController extends Controller
      */
     public function destroy(WorkHour $workHour)
     {
-        //
+
     }
 }
