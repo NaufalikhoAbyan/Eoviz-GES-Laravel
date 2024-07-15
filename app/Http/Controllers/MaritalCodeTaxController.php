@@ -45,7 +45,9 @@ class MaritalCodeTaxController extends Controller
      */
     public function show(MaritalCodeTax $maritalCodeTax)
     {
-        //
+        return inertia('References/MaritalCodeTax/ShowView', [
+            'maritalCodeTax' => $maritalCodeTax
+        ]);
     }
 
     /**
