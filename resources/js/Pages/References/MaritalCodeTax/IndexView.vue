@@ -12,8 +12,8 @@ let count = 1;
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Marital Code Taxes" description="List of all employee type"/>
-            <Link :href="route('employee-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
+            <PageTitle page-name="Marital Code Taxes" description="List of all marital code taxes"/>
+            <Link :href="route('marital-code-taxes.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
@@ -36,7 +36,7 @@ let count = 1;
                     <td class="table-item">{{ maritalCodeTax.name }}</td>
                     <td class="table-item">{{ maritalCodeTax.order }}</td>
                     <td class="table-action-item w-fit">
-                        <ActionButtons route-name="employee-types" :parameter="maritalCodeTax.id"/>
+                        <ActionButtons route-name="marital-code-taxes" :parameter="maritalCodeTax.id"/>
                     </td>
                 </tr>
                 </tbody>

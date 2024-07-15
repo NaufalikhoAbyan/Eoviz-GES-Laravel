@@ -23,7 +23,7 @@ class MaritalCodeTaxController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/MaritalCodeTax/CreateView');
     }
 
     /**
@@ -31,7 +31,13 @@ class MaritalCodeTaxController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MaritalCodeTax::create($request->validate([
+            'code' => ['required', 'unique:marital_code_taxes'],
+            'name' => ['required'],
+            'order' => ['required', 'integer'],
+            'description' => ['required']
+        ]));
+        return redirect(route('marital-code-taxes.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
