@@ -13,6 +13,6 @@ class MaritalStatus extends Model
         'name',
         'is_married',
         'status',
-        'description',
+        'description'
     ];
 }
