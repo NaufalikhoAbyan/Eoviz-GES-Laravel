@@ -24,7 +24,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="grade-types.update" :parameter="props.gradeType.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Grade Type" description="Edit a new grade type"/>
+        <PageTitle page-name="Edit Grade Type" description="Edit a grade type data"/>
         <TextInputForm title="Level" name="level" :error-message="props.errors.level" v-model.number="form.level"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model.number="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
