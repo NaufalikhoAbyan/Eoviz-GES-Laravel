@@ -18,7 +18,7 @@ class SupervisorFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'street' => fake()->text(),
+            'street' => fake()->streetName(),
             'country' => fake()->country(),
             'state' => fake()->state(),
             'city' => fake()->city(),

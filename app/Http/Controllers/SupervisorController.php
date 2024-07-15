@@ -12,7 +12,10 @@ class SupervisorController extends Controller
      */
     public function index()
     {
-        //
+        $supervisors = Supervisor::all();
+        return inertia('References/Supervisor/IndexView', [
+            'supervisors' => $supervisors
+        ]);
     }
 
     /**
