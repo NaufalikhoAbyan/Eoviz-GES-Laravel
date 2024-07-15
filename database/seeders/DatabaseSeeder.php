@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
             ReligionSeeder::class,
             EmployeeTypeSeeder::class,
             EmployeeStatusSeeder::class,
-            MaritalCodeTaxSeeder::class
+            MaritalCodeTaxSeeder::class,
+            WorkHourSeeder::class,
+            MaritalStatusSeeder::class,
+            GradeTypeSeeder::class
         ]);
     }
 }

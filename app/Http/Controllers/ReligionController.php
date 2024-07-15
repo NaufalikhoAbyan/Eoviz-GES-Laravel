@@ -14,7 +14,7 @@ class ReligionController extends Controller
     public function index()
     {
         $religions = Religion::all();
-        return inertia('References/Religion/IndexView',[
+        return inertia('References/Religion/IndexView', [
             'religions' => $religions
         ]);
     }

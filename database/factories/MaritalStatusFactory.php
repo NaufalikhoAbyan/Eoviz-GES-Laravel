@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BloodType>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MaritalStatus>
  */
-class BloodTypeFactory extends Factory
+class MaritalStatusFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,9 @@ class BloodTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name'=> fake()->unique()->bloodType(),
-            'status'  => fake()->randomElement(['Active','Not Active']),
+            'name' => fake()->name(),
+            'is_married' => fake()->boolean(),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
             'description' => fake()->text()
         ];
     }

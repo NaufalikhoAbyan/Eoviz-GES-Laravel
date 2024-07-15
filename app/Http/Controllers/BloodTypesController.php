@@ -14,8 +14,8 @@ class BloodTypesController extends Controller
     public function index()
     {
         $bloodTypes = BloodType::all();
-        return inertia('References/BloodType/IndexView',[
-            'bloodTypes' => $bloodTypes,
+        return inertia('References/BloodType/IndexView', [
+            'bloodTypes' => $bloodTypes
         ]);
     }
 
