@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Supervisor;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class SupervisorSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class SupervisorSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Supervisor::factory(7)->create();
     }
 }
