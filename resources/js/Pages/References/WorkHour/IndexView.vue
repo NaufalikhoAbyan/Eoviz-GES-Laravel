@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/vue3';
 import PageTitle from '@/Pages/Components/PageTitle.vue';
 import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
-    religions: Object
+    workHours: Object
 });
 let count = 1;
 </script>
@@ -11,8 +11,8 @@ let count = 1;
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Religion" description="List of all religion"/>
-            <Link :href="route('religions.create')"><button class="primary-btn h-fit">Add +</button></Link>
+            <PageTitle page-name="Work Hour" description="List of all work hour"/>
+            <Link :href="route('work-hours.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
@@ -23,19 +23,23 @@ let count = 1;
                     <tr class="bg-green-100 border-b">
                         <th class="table-item">No.</th>
                         <th class="table-item">Name</th>
+                        <th class="table-item">Hour</th>
+                        <th class="table-item">Holiday</th>
                         <th class="table-item">Status</th>
                         <th class="table-item">Description</th>
                         <th class="table-item">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="religion in props.religions" :key="religion.id">
+                    <tr class="border-b" v-for="workHour in props.workHours" :key="workHour.id">
                         <td class="table-item">{{ count++ }}</td>
-                        <td class="table-item">{{ religion.name }}</td>
-                        <td class="table-item">{{ religion.status }}</td>
-                        <td class="table-item">{{ religion.description }}</td>
+                        <td class="table-item">{{ workHour.name }}</td>
+                        <td class="table-item">{{ workHour.hour }}</td>
+                        <td class="table-item">{{ workHour.holiday }}</td>
+                        <td class="table-item">{{ workHour.status }}</td>
+                        <td class="table-item">{{ workHour.description }}</td>
                         <td class="table-action-item">
-                            <ActionButtons route-name="religions" :parameter="religion.id"/>
+                            <ActionButtons route-name="work-hours" :parameter="workHour.id"/>
                         </td>
                     </tr>
                 </tbody>

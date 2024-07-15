@@ -15,7 +15,7 @@ class EmployeeTypeController extends Controller
     {
         $employeeTypes = EmployeeType::all();
         return inertia('References/EmployeeType/IndexView', [
-            'employeeTypes' => $employeeTypes,
+            'employeeTypes' => $employeeTypes
         ]);
     }
 

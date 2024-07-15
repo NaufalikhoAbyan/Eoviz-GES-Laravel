@@ -7,6 +7,7 @@ use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
+use App\Http\Controllers\WorkHourController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,6 +24,7 @@ Route::resources([
     'grade-types' => GradeTypeController::class,
     'religions' => ReligionController::class,
     'employee-statuses' => EmployeeStatusController::class,
+    'work-hours' => WorkHourController::class,
     'marital-statuses' => MaritalStatusController::class
 ]);
 
