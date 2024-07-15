@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import { Country, State } from 'country-state-city';
 import PageTitle from '@/Pages/Components/PageTitle.vue';
 import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
@@ -32,7 +33,6 @@ let count = 1;
                         <th class="table-item">Mobile</th>
                         <th class="table-item">Email</th>
                         <th class="table-item">Status</th>
-                        <th class="table-item">Description</th>
                         <th class="table-item">Action</th>
                     </tr>
                 </thead>
@@ -41,15 +41,14 @@ let count = 1;
                         <td class="table-item">{{ count++ }}</td>
                         <td class="table-item">{{ supervisor.name }}</td>
                         <td class="table-item">{{ supervisor.street }}</td>
-                        <td class="table-item">{{ supervisor.country }}</td>
-                        <td class="table-item">{{ supervisor.state }}</td>
+                        <td class="table-item">{{ Country.getCountryByCode(supervisor.country).name }}</td>
+                        <td class="table-item">{{ State.getStateByCode(supervisor.state).name }}</td>
                         <td class="table-item">{{ supervisor.city }}</td>
                         <td class="table-item">{{ supervisor.postal_code }}</td>
                         <td class="table-item">{{ supervisor.phone }}</td>
                         <td class="table-item">{{ supervisor.mobile }}</td>
                         <td class="table-item">{{ supervisor.email }}</td>
                         <td class="table-item">{{ supervisor.status }}</td>
-                        <td class="table-item">{{ supervisor.description }}</td>
                         <td class="table-action-item">
                             <ActionButtons route-name="supervisors" :parameter="supervisor.id"/>
                         </td>
