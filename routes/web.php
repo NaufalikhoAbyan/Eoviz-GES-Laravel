@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeStatusController;
 use App\Http\Controllers\EmployeeTypeController;
+use App\Http\Controllers\MaritalCodeTaxController;
 use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
@@ -24,6 +25,7 @@ Route::resources([
     'grade-types' => GradeTypeController::class,
     'religions' => ReligionController::class,
     'employee-statuses' => EmployeeStatusController::class,
+    'marital-code-taxes' => MaritalCodeTaxController::class,
     'work-hours' => WorkHourController::class,
     'marital-statuses' => MaritalStatusController::class
 ]);

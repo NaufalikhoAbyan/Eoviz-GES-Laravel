@@ -29,6 +29,7 @@ const isExpanded = ref(false);
                     <MenuItem title="Work Hours" link="work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-work-hour.png"/>
                     <MenuItem title="Employee Status" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
                     <MenuItem title="Marital Status" link="marital-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-status.png"/>
+                    <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
                     <MenuItem title="Grade Types" link="grade-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-grade-type.png"/>
                 </template>
             </NavigationSidebar>
