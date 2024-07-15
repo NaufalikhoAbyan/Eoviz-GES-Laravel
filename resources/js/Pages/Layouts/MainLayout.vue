@@ -22,15 +22,15 @@ const isExpanded = ref(false);
                     <MenuItem title="References" link="references.index" :nav-state="isExpanded" src="/images/assets/menus/small-content.png" :parent="true"/>
                 </template>
                 <template v-slot:child>
+                    <MenuItem title="Supervisors" link="supervisors.index" :nav-state="isExpanded" src="/images/assets/menus/small-supervisior.png"/>
                     <MenuItem title="Employee Types" link="employee-types.index" :nav-state="isExpanded" src="/images/assets/menus/employee.png"/>
-                    <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
-                    <MenuItem title="Religions" link="religions.index" :nav-state="isExpanded" src="/images/assets/menus/small-relegion.png"/>
                     <MenuItem title="Employee Statuses" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
-                    <MenuItem title="Work Hours" link="work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-work-hour.png"/>
-                    <MenuItem title="Employee Status" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
-                    <MenuItem title="Marital Status" link="marital-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-status.png"/>
-                    <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
+                    <MenuItem title="Religions" link="religions.index" :nav-state="isExpanded" src="/images/assets/menus/small-relegion.png"/>
+                    <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
                     <MenuItem title="Grade Types" link="grade-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-grade-type.png"/>
+                    <MenuItem title="Work Hours" link="work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-work-hour.png"/>
+                    <MenuItem title="Marital Statuses" link="marital-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-status.png"/>
+                    <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
                 </template>
             </NavigationSidebar>
         </div>
