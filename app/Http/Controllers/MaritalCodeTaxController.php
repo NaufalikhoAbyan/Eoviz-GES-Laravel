@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MaritalCodeTax;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MaritalCodeTaxController extends Controller
 {
@@ -32,9 +33,9 @@ class MaritalCodeTaxController extends Controller
     public function store(Request $request)
     {
         MaritalCodeTax::create($request->validate([
-            'code' => ['required', 'unique:marital_code_taxes'],
+            'code' => ['required', 'integer', 'unique:marital_code_taxes'],
             'name' => ['required'],
-            'order' => ['required', 'integer'],
+            'order' => ['required', 'integer', 'unique:marital_code_taxes'],
             'description' => ['required']
         ]));
         return redirect(route('marital-code-taxes.index'))->with(['message' => 'Data successfully added!']);
@@ -55,7 +56,9 @@ class MaritalCodeTaxController extends Controller
      */
     public function edit(MaritalCodeTax $maritalCodeTax)
     {
-        //
+        return inertia('References/MaritalCodeTax/EditView', [
+            'maritalCodeTax' => $maritalCodeTax
+        ]);
     }
 
     /**
@@ -63,7 +66,13 @@ class MaritalCodeTaxController extends Controller
      */
     public function update(Request $request, MaritalCodeTax $maritalCodeTax)
     {
-        //
+        $maritalCodeTax->update($request->validate([
+            'code' => ['required', 'integer', Rule::unique('marital_code_taxes')->ignore($maritalCodeTax->code, 'code')],
+            'name' => ['required'],
+            'order' => ['required', 'integer', Rule::unique('marital_code_taxes')->ignore($maritalCodeTax->order, 'order')],
+            'description' => ['required']
+        ]));
+        return redirect(route('marital-code-taxes.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
