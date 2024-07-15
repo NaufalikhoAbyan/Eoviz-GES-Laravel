@@ -26,6 +26,7 @@ const isExpanded = ref(false);
                     <MenuItem title="Blood Types" link="blood-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-blood-type.png"/>
                     <MenuItem title="Religions" link="religions.index" :nav-state="isExpanded" src="/images/assets/menus/small-relegion.png"/>
                     <MenuItem title="Employee Status" link="employee-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-status.png"/>
+                    <MenuItem title="Grade Types" link="grade-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-grade-type.png"/>
                 </template>
             </NavigationSidebar>
         </div>

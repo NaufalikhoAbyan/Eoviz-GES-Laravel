@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             BloodTypeSeeder::class,
             ReligionSeeder::class,
             EmployeeTypeSeeder::class,
-            EmployeeStatusSeeder::class
+            EmployeeStatusSeeder::class,
+            GradeTypeSeeder::class
         ]);
     }
 }

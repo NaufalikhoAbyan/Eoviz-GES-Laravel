@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EmployeeStatus>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GradeType>
  */
-class EmployeeStatusFactory extends Factory
+class GradeTypeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,9 @@ class EmployeeStatusFactory extends Factory
     public function definition(): array
     {
         return [
+            'level' => fake()->numberBetween(1, 100),
+            'code' => fake()->numberBetween(1, 100),
             'name' => fake()->name(),
-            'is_active' => fake()->boolean(75),
             'order' => fake()->numberBetween(1, 100),
             'status' => fake()->randomElement(['Active', 'Not Active']),
             'description' => fake()->text()
