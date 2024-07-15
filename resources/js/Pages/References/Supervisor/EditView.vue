@@ -12,25 +12,26 @@ import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
 import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
 
 const props = defineProps({
+    supervisor: Object,
     errors: Object
 });
 
 const countries = Country.getAllCountries()
-let states = ref(null)
-let cities = ref(null)
+const states = ref(State.getStatesOfCountry(props.supervisor.country))
+const cities = ref(City.getCitiesOfState(props.supervisor.country, props.supervisor.state))
 
 const form = useForm({
-    name: null,
-    street: null,
-    country: null,
-    state: null,
-    city: null,
-    postal_code: null,
-    phone: null,
-    mobile: null,
-    email: null,
-    status: null,
-    description: null,
+    name: props.supervisor.name,
+    street: props.supervisor.street,
+    country: props.supervisor.country,
+    state: props.supervisor.state,
+    city: props.supervisor.city,
+    postal_code: props.supervisor.postal_code,
+    phone: props.supervisor.phone,
+    mobile: props.supervisor.mobile,
+    email: props.supervisor.email,
+    status: props.supervisor.status,
+    description: props.supervisor.description
 });
 
 watch(
@@ -51,7 +52,7 @@ watch(
 </script>
 
 <template>
-    <FormCard save-route="supervisors.store" :form="form" method="POST">
+    <FormCard save-route="supervisors.update" :parameter="props.supervisor.id" :form="form" method="PUT">
         <PageTitle page-name="Create Supervisor" description="Create a new supervisor"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TextAreaInputForm title="Street" name="street" :error-message="props.errors.street" v-model="form.street"/>

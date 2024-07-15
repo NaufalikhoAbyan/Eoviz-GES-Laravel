@@ -6,6 +6,7 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     supervisors: Object
 });
+
 let count = 1;
 </script>
 
@@ -42,7 +43,7 @@ let count = 1;
                         <td class="table-item">{{ supervisor.name }}</td>
                         <td class="table-item">{{ supervisor.street }}</td>
                         <td class="table-item">{{ Country.getCountryByCode(supervisor.country).name }}</td>
-                        <td class="table-item">{{ State.getStateByCode(supervisor.state).name }}</td>
+                        <td class="table-item">{{ State.getStateByCodeAndCountry(supervisor.state, supervisor.country).name }}</td>
                         <td class="table-item">{{ supervisor.city }}</td>
                         <td class="table-item">{{ supervisor.postal_code }}</td>
                         <td class="table-item">{{ supervisor.phone }}</td>
