@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SupervisorController extends Controller
 {
@@ -38,7 +39,7 @@ class SupervisorController extends Controller
             'state' => ['required'],
             'city' => ['required'],
             'postal_code' => ['required', 'integer'],
-            'phone' => ['required', 'integer'],
+            'phone' => ['required', 'integer', 'max:12'],
             'mobile' => ['required', 'integer'],
             'email' => ['required', 'email', 'unique:supervisors'],
             'status' => ['required'],
@@ -52,7 +53,9 @@ class SupervisorController extends Controller
      */
     public function show(Supervisor $supervisor)
     {
-        //
+        return inertia('References/Supervisor/ShowView', [
+            'supervisor' => $supervisor
+        ]);
     }
 
     /**
@@ -60,7 +63,9 @@ class SupervisorController extends Controller
      */
     public function edit(Supervisor $supervisor)
     {
-        //
+        return inertia('References/Supervisor/EditView', [
+            'supervisor' => $supervisor
+        ]);
     }
 
     /**
@@ -68,7 +73,20 @@ class SupervisorController extends Controller
      */
     public function update(Request $request, Supervisor $supervisor)
     {
-        //
+        $supervisor->update($request->validate([
+            'name' => ['required'],
+            'street' => ['required'],
+            'country' => ['required'],
+            'state' => ['required'],
+            'city' => ['required'],
+            'postal_code' => ['required', 'integer'],
+            'phone' => ['required', 'integer', 'max_digits:11'],
+            'mobile' => ['required', 'integer'],
+            'email' => ['required', 'email', Rule::unique('supervisors')->ignore($supervisor->email, 'email')],
+            'status' => ['required'],
+            'description' => ['required'],
+        ]));
+        return redirect(route('supervisors.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
@@ -76,6 +94,7 @@ class SupervisorController extends Controller
      */
     public function destroy(Supervisor $supervisor)
     {
-        //
+        $supervisor->delete();
+        return redirect(route('supervisors.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
