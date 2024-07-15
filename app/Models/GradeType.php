@@ -15,6 +15,6 @@ class GradeType extends Model
         'name',
         'order',
         'status',
-        'description',
+        'description'
     ];
 }
