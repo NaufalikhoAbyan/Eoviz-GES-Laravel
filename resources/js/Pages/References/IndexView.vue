@@ -1,5 +1,4 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
 import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
 </script>
 
