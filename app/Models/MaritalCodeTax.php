@@ -13,6 +13,6 @@ class MaritalCodeTax extends Model
         'code',
         'name',
         'order',
-        'description',
+        'description'
     ];
 }
