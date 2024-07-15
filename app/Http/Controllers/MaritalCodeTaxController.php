@@ -80,6 +80,7 @@ class MaritalCodeTaxController extends Controller
      */
     public function destroy(MaritalCodeTax $maritalCodeTax)
     {
-        //
+        $maritalCodeTax->delete();
+        return redirect(route('marital-code-taxes.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
