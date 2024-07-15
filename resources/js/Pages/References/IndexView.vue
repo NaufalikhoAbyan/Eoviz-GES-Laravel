@@ -9,5 +9,6 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
         <NavigationCard link="religions.index" src="/images/assets/menus/small-relegion.png" title="Religions"/>
         <NavigationCard link="employee-statuses.index" src="/images/assets/menus/small-employee-status.png" title="Employee Statuses"/>
         <NavigationCard link="marital-statuses.index" src="/images/assets/menus/small-marital-status.png" title="Marital Statuses"/>
+        <NavigationCard link="grade-types.index" src="/images/assets/menus/small-grade-type.png" title="Grade Types"/>
     </div>
 </template>

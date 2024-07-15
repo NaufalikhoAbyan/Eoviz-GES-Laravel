@@ -3,10 +3,11 @@
 use App\Http\Controllers\EmployeeStatusController;
 use App\Http\Controllers\EmployeeTypeController;
 use App\Http\Controllers\MaritalStatusController;
+use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return inertia('IndexView');
@@ -18,6 +19,8 @@ Route::get('/about', function () {
 Route::resources([
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
+    'employee-statuses' => EmployeeStatusController::class,
+    'grade-types' => GradeTypeController::class,
     'religions' => ReligionController::class,
     'employee-statuses' => EmployeeStatusController::class,
     'marital-statuses' => MaritalStatusController::class
