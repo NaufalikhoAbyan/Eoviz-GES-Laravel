@@ -19,9 +19,9 @@ class SupervisorFactory extends Factory
         return [
             'name' => fake()->name(),
             'street' => fake()->streetName(),
-            'country' => fake()->country(),
-            'state' => fake()->state(),
-            'city' => fake()->city(),
+            'country' => "ID",
+            'state' => "YO",
+            'city' => "Sleman",
             'postal_code' => fake()->numberBetween(1, 100),
             'phone' => fake()->numberBetween(1, 100),
             'mobile' => fake()->numberBetween(1, 100),
