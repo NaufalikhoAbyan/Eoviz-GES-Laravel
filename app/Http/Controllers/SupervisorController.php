@@ -23,7 +23,7 @@ class SupervisorController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/Supervisor/CreateView');
     }
 
     /**
@@ -31,7 +31,20 @@ class SupervisorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Supervisor::create($request->validate([
+            'name' => ['required'],
+            'street' => ['required'],
+            'country' => ['required'],
+            'state' => ['required'],
+            'city' => ['required'],
+            'postal_code' => ['required'],
+            'phone' => ['required'],
+            'mobile' => ['required'],
+            'email' => ['required'],
+            'status' => ['required'],
+            'description' => ['required'],
+        ]));
+        return redirect(route('supervisors.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
@@ -39,7 +52,9 @@ class SupervisorController extends Controller
      */
     public function show(Supervisor $supervisor)
     {
-        //
+        return inertia('References/Supervisor/ShowView', [
+            'supervisor' => $supervisor
+        ]);
     }
 
     /**
