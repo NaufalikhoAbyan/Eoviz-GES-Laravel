@@ -7,8 +7,7 @@ import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
 import FormCard from "@/Pages/Components/Forms/FormCard.vue";
 import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
 import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
-import CheckboxInputForm from "@/Pages/Components/Forms/CheckboxInputForm.vue";
-import CheckboxItem from "@/Pages/Components/Forms/CheckboxItem.vue";
+import SingleCheckboxInputForm from "@/Pages/Components/Forms/SingleCheckboxInputForm.vue";
 
 const props = defineProps({
     workHour: Object,
@@ -36,9 +35,7 @@ const form = useForm({
             <RadioItem label="Not Active" id="not_active"/>
         </RadioInputForm>
         <TextAreaInputForm title="Description" name="description" :error-message="props.errors.description" v-model="form.description"/>
-        <CheckboxInputForm title="Is Locked" name="is_locked" :error-message="props.errors.is_locked" v-model="form.is_locked">
-            <CheckboxItem label="" id="is_locked" value="1"/>
-        </CheckboxInputForm>
+        <SingleCheckboxInputForm title="Is Locked" name="is_locked" id="isLocked" :error-message="props.errors['is_locked']" v-model="form.is_locked"/>
         <FormButtons cancel-route="work-hours.index"/>
     </FormCard>
 </template>

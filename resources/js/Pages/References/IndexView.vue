@@ -1,5 +1,4 @@
 <script setup>
-import { Link } from "@inertiajs/vue3";
 import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
 </script>
 
@@ -9,7 +8,9 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
         <NavigationCard link="blood-types.index" src="/images/assets/menus/small-blood-type.png" title="Blood Types"/>
         <NavigationCard link="religions.index" src="/images/assets/menus/small-relegion.png" title="Religions"/>
         <NavigationCard link="employee-statuses.index" src="/images/assets/menus/small-employee-status.png" title="Employee Statuses"/>
-        <NavigationCard link="work-hours.index" src="https://demo.gthr.eoviz.com/assets/images/btn/small-work-hour.png" title="Work Hours"/>
-        <NavigationCard link="work-hours.index" src="https://demo.gthr.eoviz.com/assets/images/btn/small-work-hour.png" title="Supervisors"/>
+        <NavigationCard link="marital-code-taxes.index" src="/images/assets/menus/small-marital-tax.png" title="Marital Code Taxes"/>
+        <NavigationCard link="work-hours.index" src="/images/assets/menus/small-work-hour.png" title="Work Hours"/>
+        <NavigationCard link="marital-statuses.index" src="/images/assets/menus/small-marital-status.png" title="Marital Statuses"/>
+        <NavigationCard link="grade-types.index" src="/images/assets/menus/small-grade-type.png" title="Grade Types"/>
     </div>
 </template>

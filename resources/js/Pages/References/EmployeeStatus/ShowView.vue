@@ -16,7 +16,7 @@ const props = defineProps({
                 <Link :href="route('employee-statuses.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Name" :value="props.employeeStatus.name"/>
-            <DetailsData title="Is Permanent" :value="props.employeeStatus['is_active']" :boolean="true"/>
+            <DetailsData title="Is Permanent" :value="props.employeeStatus['is_active']" :boolean="true" true-value="Yes" false-value="No"/>
             <DetailsData title="Order" :value="props.employeeStatus.order"/>
             <DetailsData title="Status" :value="props.employeeStatus.status"/>
             <DetailsData title="Description" :value="props.employeeStatus.description"/>

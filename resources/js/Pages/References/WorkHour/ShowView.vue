@@ -18,7 +18,7 @@ const props = defineProps({
             <DetailsData title="Name" :value="props.workHour.name"/>
             <DetailsData title="Hour" :value="props.workHour.hour"/>
             <DetailsData title="Holiday" :value="props.workHour.holiday"/>
-            <DetailsData title="Is Locked" :value="props.workHour['is_locked']" :boolean="true"/>
+            <DetailsData title="Is Locked" :value="props.workHour['is_locked']" :boolean="true" true-value="Locked" false-value="Unlocked"/>
             <DetailsData title="Status" :value="props.workHour.status"/>
             <DetailsData title="Description" :value="props.workHour.description"/>
         </div>

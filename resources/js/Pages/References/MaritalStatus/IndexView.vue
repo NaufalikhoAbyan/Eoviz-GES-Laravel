@@ -2,8 +2,9 @@
 import { Link } from "@inertiajs/vue3";
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 import ActionButtons from "@/Pages/Components/ActionButtons.vue";
+
 const props = defineProps({
-    employeeStatuses: Object
+    maritalStatuses: Object
 });
 let count = 1;
 </script>
@@ -11,8 +12,8 @@ let count = 1;
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Employee Statuses" description="List of all employee status"/>
-            <Link :href="route('employee-statuses.create')"><button class="primary-btn h-fit">Add +</button></Link>
+            <PageTitle page-name="Marital Statuses" description="List of all marital Status"/>
+            <Link :href="route('marital-statuses.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
@@ -23,21 +24,19 @@ let count = 1;
                 <tr class="bg-gray-100 border-b">
                     <th class="table-item">No.</th>
                     <th class="table-item">Name</th>
-                    <th class="table-item">Is Active</th>
-                    <th class="table-item">Order</th>
+                    <th class="table-item">Is Married</th>
                     <th class="table-item">Status</th>
                     <th class="table-item w-1">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="employeeStatus in props.employeeStatuses" :key="employeeStatus.id">
+                <tr class="border-b" v-for="maritalStatus in props.maritalStatuses" :key="maritalStatus.id">
                     <td class="table-item">{{ count++ }}</td>
-                    <td class="table-item">{{ employeeStatus.name }}</td>
-                    <td class="table-item">{{ employeeStatus['is_active'] ? "Yes" : "No" }}</td>
-                    <td class="table-item">{{ employeeStatus.order }}</td>
-                    <td class="table-item">{{ employeeStatus.status }}</td>
+                    <td class="table-item">{{ maritalStatus.name }}</td>
+                    <td class="table-item">{{ maritalStatus['is_married'] ? "Yes" : "No" }}</td>
+                    <td class="table-item">{{ maritalStatus.status }}</td>
                     <td class="table-action-item w-fit">
-                        <ActionButtons route-name="employee-statuses" :parameter="employeeStatus.id"/>
+                        <ActionButtons route-name="marital-statuses" :parameter="maritalStatus.id"/>
                     </td>
                 </tr>
                 </tbody>

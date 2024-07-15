@@ -7,33 +7,33 @@ import PageTitle from "@/Pages/Components/PageTitle.vue";
 import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
 import RadioInputForm from "@/Pages/Components/Forms/RadioInputForm.vue";
 import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
-import SingleCheckboxInputForm from "@/Pages/Components/Forms/SingleCheckboxInputForm.vue";
 const props = defineProps({
+    gradeType: Object,
     errors: Object
 });
 
 const form = useForm({
-    name: null,
-    hour: null,
-    holiday: null,
-    status: null,
-    description: null,
-    is_locked: false
+    level: props.gradeType.level,
+    code: props.gradeType.code,
+    name: props.gradeType.name,
+    order: props.gradeType.order,
+    status: props.gradeType.status,
+    description: props.gradeType.description
 });
 </script>
 
 <template>
-    <FormCard save-route="work-hours.store" :form="form" method="POST">
-        <PageTitle page-name="Create Work Hour" description="Create a new Work Hour"/>
+    <FormCard save-route="grade-types.update" :parameter="props.gradeType.id" :form="form" method="PUT">
+        <PageTitle page-name="Edit Grade Type" description="Edit a grade type data"/>
+        <TextInputForm title="Level" name="level" :error-message="props.errors.level" v-model.number="form.level"/>
+        <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model.number="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
-        <TextInputForm title="Hour" name="hour" :error-message="props.errors.hour" v-model="form.hour"/>
-        <TextInputForm title="Holiday" name="holiday" :error-message="props.errors.holiday" v-model="form.holiday"/>
+        <TextInputForm title="Order" name="order" :error-message="props.errors.order" v-model.number="form.order"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>
             <RadioItem label="Not Active" id="not_active"/>
         </RadioInputForm>
         <TextAreaInputForm title="Description" name="description" :error-message="props.errors.description" v-model="form.description"/>
-        <SingleCheckboxInputForm title="Is Locked" name="is_locked" id="isLocked" :error-message="props.errors['is_locked']" v-model="form.is_locked"/>
-        <FormButtons cancel-route="work-hours.index"/>
+        <FormButtons cancel-route="grade-types.index"/>
     </FormCard>
 </template>

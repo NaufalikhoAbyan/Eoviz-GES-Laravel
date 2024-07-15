@@ -37,7 +37,7 @@ class WorkHourController extends Controller
             'holiday' => ['required'],
             'status' => ['required'],
             'description' => ['required'],
-            'is_locked' => ['required']
+            'is_locked' => ['required', 'boolean']
         ]));
         return redirect(route('work-hours.index'))->with(['message' => 'Data successfully added!']);
     }
