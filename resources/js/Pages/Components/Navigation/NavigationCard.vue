@@ -5,7 +5,7 @@ const props = defineProps({
     link: String,
     src: String,
     title: String
-})
+});
 </script>
 
 <template>

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EmployeeStatus>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MaritalStatus>
  */
-class EmployeeStatusFactory extends Factory
+class MaritalStatusFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +18,7 @@ class EmployeeStatusFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'is_active' => fake()->boolean(75),
-            'order' => fake()->numberBetween(1, 100),
+            'is_married' => fake()->boolean(),
             'status' => fake()->randomElement(['Active', 'Not Active']),
             'description' => fake()->text()
         ];
