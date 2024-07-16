@@ -87,6 +87,7 @@ class MaritalCodeController extends Controller
      */
     public function destroy(MaritalCode $maritalCode)
     {
-        //
+        $maritalCode->delete();
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully deleted!']);
     }
 }

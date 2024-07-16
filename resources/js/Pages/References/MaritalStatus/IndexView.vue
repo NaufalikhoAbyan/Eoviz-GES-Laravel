@@ -18,6 +18,9 @@ let count = 1;
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
         </div>
+        <div v-if="$page.props.flash.error" class="card-error">
+            {{ $page.props.flash.error }}
+        </div>
         <div class="card">
             <table class="table-auto w-full text-left">
                 <thead>
