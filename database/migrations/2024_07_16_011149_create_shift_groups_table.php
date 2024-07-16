@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('shift_groups', function (Blueprint $table) {
             $table->id();
+            $table->string('code', length: 255);
+            $table->string('name', length: 255);
+            $table->string('order', length: 255);
+            $table->enum('status', ['Active', 'Not Active']);
+            $table->boolean('is_follow_holiday');
+            $table->string('description', length: 255);
             $table->timestamps();
         });
     }
