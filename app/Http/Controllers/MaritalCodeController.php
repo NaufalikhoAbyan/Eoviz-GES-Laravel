@@ -42,7 +42,7 @@ class MaritalCodeController extends Controller
             'marital_status_id' => ['required']
         ]));
 
-        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully added!']);
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
@@ -79,7 +79,7 @@ class MaritalCodeController extends Controller
             'marital_status_id' => ['required']
         ]));
 
-        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully changed!']);
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
@@ -88,6 +88,6 @@ class MaritalCodeController extends Controller
     public function destroy(MaritalCode $maritalCode)
     {
         $maritalCode->delete();
-        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully deleted!']);
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
