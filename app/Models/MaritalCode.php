@@ -16,7 +16,7 @@ class MaritalCode extends Model
         'name',
         'status',
         'description',
-        'marital_status_id',
+        'marital_status_id'
     ];
 
     public function maritalStatus(): BelongsTo
