@@ -17,7 +17,12 @@ class FunctionalPositionTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'functional_position_type_id' => null,
+            'code' => fake()->randomDigit(),
+            'name' => fake()->name(),
+            'order' => fake()->numberBetween(1, 100),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
+            'description' => fake()->text()
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\FunctionalPositionType;
 use Illuminate\Database\Seeder;
 
 class FunctionalPositionTypeSeeder extends Seeder
@@ -12,6 +12,10 @@ class FunctionalPositionTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        for ($i = 1; $i < 6; $i++) {
+            FunctionalPositionType::factory()->create([
+                'order' => $i
+            ]);
+        }
     }
 }
