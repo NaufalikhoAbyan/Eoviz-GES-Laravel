@@ -49,7 +49,9 @@ class MaritalCodeController extends Controller
      */
     public function show(MaritalCode $maritalCode)
     {
-        //
+        return inertia('References/MaritalCode/ShowView', [
+            'maritalCode' => $maritalCode->load('maritalStatus')
+        ]);
     }
 
     /**
