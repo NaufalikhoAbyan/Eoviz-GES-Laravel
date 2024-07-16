@@ -22,7 +22,9 @@ class FunctionalPositionTypeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia("References/FunctionalPositionType/CreateView", [
+            "functionalPositionTypes" => FunctionalPositionType::all()
+        ]);
     }
 
     /**
@@ -30,7 +32,16 @@ class FunctionalPositionTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        FunctionalPositionType::create($request->validate([
+            'functional_position_type_id' => ['nullable'],
+            'code' => ['required'],
+            'name' => ['required'],
+            'order' => ['required', 'unique:functional_position_types'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+
+        return redirect(route('functional-position-types.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
