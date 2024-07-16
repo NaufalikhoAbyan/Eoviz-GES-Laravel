@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MaritalCode;
 use App\Models\MaritalStatus;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MaritalCodeController extends Controller
 {
@@ -59,7 +60,10 @@ class MaritalCodeController extends Controller
      */
     public function edit(MaritalCode $maritalCode)
     {
-        //
+        return inertia('References/MaritalCode/EditView', [
+            'maritalCode' => $maritalCode,
+            'maritalStatuses' => MaritalStatus::all()
+        ]);
     }
 
     /**
@@ -67,7 +71,15 @@ class MaritalCodeController extends Controller
      */
     public function update(Request $request, MaritalCode $maritalCode)
     {
-        //
+        $maritalCode->update($request->validate([
+            'code' => ['required', Rule::unique('marital_codes')->ignore($maritalCode->code, 'code')],
+            'name' => ['required'],
+            'status' => ['required'],
+            'description' => ['required'],
+            'marital_status_id' => ['required']
+        ]));
+
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully changed!']);
     }
 
     /**
