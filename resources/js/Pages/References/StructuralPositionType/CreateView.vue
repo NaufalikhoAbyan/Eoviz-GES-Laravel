@@ -12,7 +12,7 @@ import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
 const props = defineProps({
     structuralPositionTypes: Object,
     errors: Object
-})
+});
 
 const form = useForm({
     structural_position_type_id: null,
@@ -21,7 +21,7 @@ const form = useForm({
     order: null,
     status: null,
     description: null,
-})
+});
 </script>
 
 <template>

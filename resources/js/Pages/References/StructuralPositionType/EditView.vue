@@ -13,7 +13,7 @@ const props = defineProps({
     structuralPositionType: Object,
     structuralPositionTypes: Object,
     errors: Object
-})
+});
 
 const form = useForm({
     structural_position_type_id: props.structuralPositionType.structural_position_type_id,
@@ -22,7 +22,7 @@ const form = useForm({
     order: props.structuralPositionType.order,
     status: props.structuralPositionType.status,
     description: props.structuralPositionType.description,
-})
+});
 </script>
 
 <template>
