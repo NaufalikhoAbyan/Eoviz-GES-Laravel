@@ -17,7 +17,7 @@ class FunctionalPositionType extends Model
         'name',
         'order',
         'status',
-        'description',
+        'description'
     ];
 
     public function parent(): BelongsTo
