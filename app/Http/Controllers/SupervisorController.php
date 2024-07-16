@@ -39,7 +39,7 @@ class SupervisorController extends Controller
             'state' => ['required'],
             'city' => ['required'],
             'postal_code' => ['required', 'integer'],
-            'phone' => ['required', 'integer', 'max:12'],
+            'phone' => ['required', 'integer'],
             'mobile' => ['required', 'integer'],
             'email' => ['required', 'email', 'unique:supervisors'],
             'status' => ['required'],
