@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BloodTypeSeeder::class,
             ShiftGroupSeeder::class,
+            ShiftWorkHourSeeder::class,
             ReligionSeeder::class,
             EmployeeTypeSeeder::class,
             EmployeeStatusSeeder::class,

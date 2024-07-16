@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ShiftWorkHour;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ShiftWorkHourSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class ShiftWorkHourSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ShiftWorkHour::factory(5)->create();
     }
 }
