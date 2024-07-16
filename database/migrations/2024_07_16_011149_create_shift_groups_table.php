@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code', length: 255);
             $table->string('name', length: 255);
-            $table->string('order', length: 255);
+            $table->integer('order');
             $table->enum('status', ['Active', 'Not Active']);
             $table->boolean('is_follow_holiday');
             $table->string('description', length: 255);
