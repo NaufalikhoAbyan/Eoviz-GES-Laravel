@@ -88,6 +88,12 @@ class StructuralPositionTypeController extends Controller
      */
     public function destroy(StructuralPositionType $structuralPositionType)
     {
-        //
+        try {
+            $structuralPositionType->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('structural-position-types.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
+
+        return redirect(route('structural-position-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
