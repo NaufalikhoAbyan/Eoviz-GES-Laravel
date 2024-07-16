@@ -49,7 +49,9 @@ class StructuralPositionTypeController extends Controller
      */
     public function show(StructuralPositionType $structuralPositionType)
     {
-        //
+        return inertia('References/StructuralPositionType/ShowView', [
+            'structuralPositionType' => $structuralPositionType->load('parent')
+        ]);
     }
 
     /**
