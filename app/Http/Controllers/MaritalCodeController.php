@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MaritalCode;
+use App\Models\MaritalStatus;
 use Illuminate\Http\Request;
 
 class MaritalCodeController extends Controller
@@ -22,7 +23,9 @@ class MaritalCodeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/MaritalCode/CreateView', [
+            'maritalStatuses' => MaritalStatus::all()
+        ]);
     }
 
     /**
@@ -30,7 +33,15 @@ class MaritalCodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        MaritalCode::create($request->validate([
+            'code' => ['required', 'unique:marital_codes'],
+            'name' => ['required'],
+            'status' => ['required'],
+            'description' => ['required'],
+            'marital_status_id' => ['required']
+        ]));
+
+        return redirect(route('marital-codes.index'))->with(['message' => 'Data succesfully added!']);
     }
 
     /**
