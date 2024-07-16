@@ -22,7 +22,7 @@ class StructuralPositionType extends Model
 
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(StructuralPositionType::class, 'structural_position_type_id');
+        return $this->belongsTo(StructuralPositionType::class);
     }
 
     public function children(): HasMany

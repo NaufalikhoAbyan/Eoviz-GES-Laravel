@@ -12,9 +12,7 @@ class StructuralPositionTypeController extends Controller
      */
     public function index()
     {
-        return inertia('References/StructuralPositionType/IndexView', [
-            'structuralPositionTypes' => StructuralPositionType::all()->load('parent')
-        ]);
+        //
     }
 
     /**
