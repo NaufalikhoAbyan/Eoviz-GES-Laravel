@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ShiftGroup;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ShiftGroupSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class ShiftGroupSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        ShiftGroup::factory(5)->create();
     }
 }
