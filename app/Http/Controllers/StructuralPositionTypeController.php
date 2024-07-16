@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StructuralPositionType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class StructuralPositionTypeController extends Controller
 {
@@ -59,7 +60,10 @@ class StructuralPositionTypeController extends Controller
      */
     public function edit(StructuralPositionType $structuralPositionType)
     {
-        //
+        return inertia('References/StructuralPositionType/EditView', [
+            'structuralPositionType' => $structuralPositionType,
+            'structuralPositionTypes' => StructuralPositionType::all()->except($structuralPositionType->id)->load('parent')
+        ]);
     }
 
     /**
@@ -67,7 +71,16 @@ class StructuralPositionTypeController extends Controller
      */
     public function update(Request $request, StructuralPositionType $structuralPositionType)
     {
-        //
+        $structuralPositionType->update($request->validate([
+            'structural_position_type_id' => ['nullable'],
+            'code' => ['required'],
+            'name' => ['required'],
+            'order' => ['required', Rule::unique('structural_position_types')->ignore($structuralPositionType->order, 'order')],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+
+        return redirect(route('structural-position-types.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
