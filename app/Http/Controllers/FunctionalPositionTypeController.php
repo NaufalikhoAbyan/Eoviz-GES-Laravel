@@ -49,7 +49,9 @@ class FunctionalPositionTypeController extends Controller
      */
     public function show(FunctionalPositionType $functionalPositionType)
     {
-        //
+        return inertia('References/FunctionalPositionType/ShowView', [
+            'functionalPositionType' => $functionalPositionType->load('parent')
+        ]);
     }
 
     /**
