@@ -12,7 +12,9 @@ class MaritalCodeController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('References/MaritalCode/IndexView', [
+            'maritalCodes' => MaritalCode::all()->load('maritalStatus')
+        ]);
     }
 
     /**
