@@ -5,6 +5,7 @@ use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\BloodTypesController;
+use App\Http\Controllers\StructuralPositionTypeController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\EmployeeTypeController;
 use App\Http\Controllers\EmployeeStatusController;
@@ -19,6 +20,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::resources([
+    'structural-position-types' => StructuralPositionTypeController::class,
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'employee-statuses' => EmployeeStatusController::class,
