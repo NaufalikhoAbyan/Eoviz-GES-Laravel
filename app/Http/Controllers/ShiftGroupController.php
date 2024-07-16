@@ -12,7 +12,10 @@ class ShiftGroupController extends Controller
      */
     public function index()
     {
-        //
+        $shiftGroups = ShiftGroup::all();
+        return inertia('References/ShiftGroup/IndexView', [
+            'shiftGroups' => $shiftGroups
+        ]);
     }
 
     /**

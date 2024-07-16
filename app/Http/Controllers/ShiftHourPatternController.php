@@ -12,7 +12,10 @@ class ShiftHourPatternController extends Controller
      */
     public function index()
     {
-        //
+        $shiftHourPatterns = ShiftHourPattern::all();
+        return inertia('References/ShiftHourPattern/IndexView', [
+            'shiftHourPatterns' => $shiftHourPatterns
+        ]);
     }
 
     /**

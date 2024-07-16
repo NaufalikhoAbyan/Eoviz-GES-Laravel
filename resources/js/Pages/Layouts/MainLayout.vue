@@ -31,6 +31,9 @@ const isExpanded = ref(false);
                     <MenuItem title="Work Hours" link="work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-work-hour.png"/>
                     <MenuItem title="Marital Statuses" link="marital-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-status.png"/>
                     <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
+                    <MenuItem title="Shift Groups" link="shift-groups.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-functional-position.png"/>
+                    <MenuItem title="Shift Work Hours" link="shift-work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-setting.png"/>
+                    <MenuItem title="Shift Hour Patterns" link="shift-hour-patterns.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-setting.png"/>
                 </template>
             </NavigationSidebar>
         </div>

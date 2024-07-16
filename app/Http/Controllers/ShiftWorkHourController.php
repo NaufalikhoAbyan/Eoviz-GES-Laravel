@@ -12,7 +12,10 @@ class ShiftWorkHourController extends Controller
      */
     public function index()
     {
-        //
+        $shiftWorkHours = ShiftWorkHour::all();
+        return inertia('References/ShiftWorkHour/IndexView', [
+            'shiftWorkHours' => $shiftWorkHours
+        ]);
     }
 
     /**
