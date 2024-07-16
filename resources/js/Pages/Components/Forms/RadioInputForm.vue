@@ -1,4 +1,4 @@
-<script setup>
+    <script setup>
 import { provide } from "vue";
 const props = defineProps({
     title: String,

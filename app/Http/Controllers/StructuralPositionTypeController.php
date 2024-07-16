@@ -22,7 +22,9 @@ class StructuralPositionTypeController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/StructuralPositionType/CreateView', [
+            'structuralPositionTypes' => StructuralPositionType::all()
+        ]);
     }
 
     /**
@@ -30,7 +32,16 @@ class StructuralPositionTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        StructuralPositionType::create($request->validate([
+            'structural_position_type_id' => ['nullable'],
+            'code' => ['required'],
+            'name' => ['required'],
+            'order' => ['required', 'unique:structural_position_types'],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+
+        return redirect(route('structural-position-types.index'))->with(['message' => 'Data successfully added!']);
     }
 
     /**
