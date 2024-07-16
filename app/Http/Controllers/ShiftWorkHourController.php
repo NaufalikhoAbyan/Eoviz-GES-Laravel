@@ -23,7 +23,7 @@ class ShiftWorkHourController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/ShiftWorkHour/CreateView');
     }
 
     /**
