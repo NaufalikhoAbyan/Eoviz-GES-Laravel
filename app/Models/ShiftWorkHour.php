@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ShiftHourPattern;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ShiftWorkHour extends Model
 {
@@ -25,4 +27,9 @@ class ShiftWorkHour extends Model
         'status',
         'description'
     ];
+
+    public function shiftHourPattern(): HasOne
+    {
+        return $this->hasOne(ShiftHourPattern::class);
+    }
 }

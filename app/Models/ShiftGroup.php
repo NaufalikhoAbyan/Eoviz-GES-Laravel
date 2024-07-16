@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ShiftHourPattern;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ShiftGroup extends Model
 {
@@ -17,4 +19,9 @@ class ShiftGroup extends Model
         'is_follow_holiday',
         'description'
     ];
+
+    public function shiftHourPatterns(): HasMany
+    {
+        return $this->hasMany(ShiftHourPattern::class);
+    }
 }
