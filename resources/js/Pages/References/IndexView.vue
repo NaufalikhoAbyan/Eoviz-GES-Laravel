@@ -13,5 +13,6 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
         <NavigationCard link="work-hours.index" src="/images/assets/menus/small-work-hour.png" title="Work Hours"/>
         <NavigationCard link="marital-code-taxes.index" src="/images/assets/menus/small-marital-tax.png" title="Marital Code Taxes"/>
         <NavigationCard link="marital-statuses.index" src="/images/assets/menus/small-marital-status.png" title="Marital Statuses"/>
+        <NavigationCard link="structural-position-types.index" src="/images/assets/menus/small-structural-position.png" title="Structural Position Types"/>
     </div>
 </template>
