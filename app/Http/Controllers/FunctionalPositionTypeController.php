@@ -88,6 +88,12 @@ class FunctionalPositionTypeController extends Controller
      */
     public function destroy(FunctionalPositionType $functionalPositionType)
     {
-        //
+        try {
+            $functionalPositionType->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('functional-position-types.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
+
+        return redirect(route('functional-position-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
