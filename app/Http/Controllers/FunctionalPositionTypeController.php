@@ -12,7 +12,9 @@ class FunctionalPositionTypeController extends Controller
      */
     public function index()
     {
-        //
+        return inertia("References/FunctionalPositionType/IndexView", [
+            "functionalPositionTypes" => FunctionalPositionType::all()->load('parent')
+        ]);
     }
 
     /**
