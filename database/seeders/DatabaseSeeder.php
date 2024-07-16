@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             BloodTypeSeeder::class,
             ShiftGroupSeeder::class,
             ShiftWorkHourSeeder::class,
+            ShiftHourPatternSeeder::class,
             ReligionSeeder::class,
             EmployeeTypeSeeder::class,
             EmployeeStatusSeeder::class,

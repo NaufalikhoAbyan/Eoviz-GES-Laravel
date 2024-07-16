@@ -17,7 +17,9 @@ class ShiftHourPatternFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'shift_work_hour_id' => fake()->numberBetween(1, 100),
+            'is_short_day' => fake()->boolean(),
+            'shift_group_id' => fake()->numberBetween(1, 100),
         ];
     }
 }
