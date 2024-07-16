@@ -15,9 +15,9 @@ const props = defineProps({
     errors: Object
 });
 
-const countries = Country.getAllCountries()
-let states = ref(null)
-let cities = ref(null)
+const countries = Country.getAllCountries();
+let states = ref(null);
+let cities = ref(null);
 
 const form = useForm({
     name: null,
@@ -36,18 +36,18 @@ const form = useForm({
 watch(
     () => form.country,
     () => {
-        form.state = null
-        states.value = State.getStatesOfCountry(form.country)
+        form.state = null;
+        states.value = State.getStatesOfCountry(form.country);
     }
-)
+);
 
 watch(
     () => form.state,
     () => {
-        form.city = null
-        cities.value = City.getCitiesOfState(form.country, form.state)
+        form.city = null;
+        cities.value = City.getCitiesOfState(form.country, form.state);
     }
-)
+);
 </script>
 
 <template>

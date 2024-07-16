@@ -5,7 +5,7 @@ import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 
 const props = defineProps({
     maritalCodes: Object
-})
+});
 
 let count = 1;
 </script>
