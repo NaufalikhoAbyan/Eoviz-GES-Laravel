@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FunctionalPositionType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class FunctionalPositionTypeController extends Controller
 {
@@ -59,7 +60,10 @@ class FunctionalPositionTypeController extends Controller
      */
     public function edit(FunctionalPositionType $functionalPositionType)
     {
-        //
+        return inertia('References/FunctionalPositionType/EditView', [
+            'functionalPositionType' => $functionalPositionType,
+            'functionalPositionTypes' => FunctionalPositionType::all()->except($functionalPositionType->id)->load('parent')
+        ]);
     }
 
     /**
@@ -67,7 +71,16 @@ class FunctionalPositionTypeController extends Controller
      */
     public function update(Request $request, FunctionalPositionType $functionalPositionType)
     {
-        //
+        $functionalPositionType->update($request->validate([
+            'functional_position_type_id' => ['nullable'],
+            'code' => ['required'],
+            'name' => ['required'],
+            'order' => ['required', Rule::unique('functional_position_types')->ignore($functionalPositionType->order, 'order')],
+            'status' => ['required'],
+            'description' => ['required']
+        ]));
+
+        return redirect(route('functional-position-types.index'))->with(['message' => 'Data successfully changed!']);
     }
 
     /**
