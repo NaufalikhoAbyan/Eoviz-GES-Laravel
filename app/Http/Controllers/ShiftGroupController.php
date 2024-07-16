@@ -23,7 +23,7 @@ class ShiftGroupController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('References/ShiftGroup/CreateView');
     }
 
     /**
