@@ -17,7 +17,11 @@ class MaritalCodeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'code' => fake()->numberBetween(1,100),
+            'name' => fake()->name(),
+            'status' => fake()->randomElement(['Active', 'Not Active']),
+            'description' => fake()->text(),
+            'marital_status_id' => 1
         ];
     }
 }

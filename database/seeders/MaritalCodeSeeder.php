@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\MaritalCode;
 use Illuminate\Database\Seeder;
 
 class MaritalCodeSeeder extends Seeder
@@ -12,6 +12,15 @@ class MaritalCodeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        MaritalCode::factory()->create([
+            'code' => 1
+        ]);
+        MaritalCode::factory()->create([
+            'code' => 2
+        ]);
+        MaritalCode::factory()->create([
+            'code' => 3,
+            'marital_status_id' => 2
+        ]);
     }
 }
