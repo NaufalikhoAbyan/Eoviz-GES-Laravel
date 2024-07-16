@@ -15,7 +15,7 @@ const props = defineProps({
                 <PageTitle page-name="Marital Code" description="Show a marital code data"/>
                 <Link :href="route('marital-codes.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
-            <DetailsData title="Code" :value="props.maritalCode.name"/>
+            <DetailsData title="Code" :value="props.maritalCode.code"/>
             <DetailsData title="Name" :value="props.maritalCode.name"/>
             <DetailsData title="Status" :value="props.maritalCode.status"/>
             <DetailsData title="Description" :value="props.maritalCode.description"/>
