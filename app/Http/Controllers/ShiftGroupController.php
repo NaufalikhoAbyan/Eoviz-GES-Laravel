@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShiftGroup;
+use App\Models\ShiftHourPattern;
+use App\Models\ShiftWorkHour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ShiftGroupController extends Controller
 {
@@ -23,7 +26,9 @@ class ShiftGroupController extends Controller
      */
     public function create()
     {
-        return inertia('References/ShiftGroup/CreateView');
+        return inertia('References/ShiftGroup/CreateView', [
+            'shiftWorkHours' => ShiftWorkHour::all()
+        ]);
     }
 
     /**
@@ -31,7 +36,35 @@ class ShiftGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request['shift_group_patterns'] as $shift_group_pattern) {
+            $validator = Validator::make($shift_group_pattern['form'], [
+                'shift_work_hour_id' => ['required']
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors("All Shift Hour dropdown must be filled!");
+            }
+        }
+
+        $newShiftGroup = ShiftGroup::create($request->validate([
+            'code' => ['required', 'unique:shift_groups'],
+            'name' => ['required'],
+            'order' => ['required', 'unique:shift_groups'],
+            'status' => ['required'],
+            'is_follow_holiday' => ['required'],
+            'description' => ['required'],
+        ]));
+
+        if($newShiftGroup) {
+            foreach ($request['shift_group_patterns'] as $shift_group_pattern) {
+                ShiftHourPattern::create([
+                    'shift_work_hour_id' => $shift_group_pattern['form']['shift_work_hour_id'],
+                    'is_short_day' => $shift_group_pattern['form']['is_short_day'],
+                    'shift_group_id' => $newShiftGroup['id'],
+                ]);
+            }
+        }
+
+        return redirect(route('shift-groups.index'))->with(['message' => 'Shift Group created successfully!']);
     }
 
     /**
