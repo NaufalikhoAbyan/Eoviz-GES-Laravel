@@ -11,7 +11,7 @@ const model = inject("model");
 
 <template>
     <div class="flex items-center gap-4">
-        <input type="radio" :name="radioName" :id="props.id" :value="props.value ? props.value : props.label" class="size-4" v-model="model">
+        <input type="radio" :name="radioName" :id="props.id" :value="props.value != null ? props.value : props.label" class="size-4" v-model="model">
         <label :for="props.id">{{ props.label }}</label>
     </div>
 </template>

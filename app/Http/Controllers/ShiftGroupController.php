@@ -72,7 +72,20 @@ class ShiftGroupController extends Controller
      */
     public function show(ShiftGroup $shiftGroup)
     {
-        //
+        $shiftWorkHours = [];
+        foreach ($shiftGroup->shiftHourPatterns as $shiftWorkPattern) {
+            $shiftWorkHour =  ShiftWorkHour::findOrFail($shiftWorkPattern->shift_work_hour_id);
+            $shiftWorkHours[] = [
+                'is_short_day' => $shiftWorkPattern->is_short_day,
+                'name' => $shiftWorkHour->name,
+                'start' => $shiftWorkHour->start,
+                'end' => $shiftWorkHour->end,
+            ];
+        }
+        return inertia('References/ShiftGroup/ShowView', [
+            'shiftGroup' => $shiftGroup->load('shiftHourPatterns'),
+            'shiftWorkHours' => $shiftWorkHours
+        ]);
     }
 
     /**
