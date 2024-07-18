@@ -33,9 +33,9 @@ let count = 1;
                 <tbody>
                     <tr class="border-b" v-for="shiftHourPattern in props.shiftHourPatterns" :key="shiftHourPattern.id">
                         <td class="table-item">{{ count++ }}</td>
-                        <td class="table-item">{{ shiftHourPattern.shift_work_hour_id }}</td>
-                        <td class="table-item">{{ shiftHourPattern.is_short_day['is_short_day'] ? "Yes" : "No" }}</td>
-                        <td class="table-item">{{ shiftHourPattern.shift_group_id }}</td>
+                        <td class="table-item">{{ shiftHourPattern['shift_work_hour_id']}}</td>
+                        <td class="table-item">{{ shiftHourPattern['is_short_day'] ? "Yes" : "No" }}</td>
+                        <td class="table-item">{{ shiftHourPattern['shift_group_id'] }}</td>
                         <td class="table-action-item">
                             <ActionButtons route-name="shift-hour-patterns" :parameter="shiftHourPattern.id"/>
                         </td>

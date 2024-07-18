@@ -39,7 +39,7 @@ let count = 1;
                         <td class="table-item">{{ shiftGroup.name }}</td>
                         <td class="table-item">{{ shiftGroup.order }}</td>
                         <td class="table-item">{{ shiftGroup.status }}</td>
-                        <td class="table-item">{{ shiftGroup.is_follow_holiday['is_follow_holiday'] ? "Yes" : "No" }}</td>
+                        <td class="table-item">{{ shiftGroup['is_follow_holiday'] ? "Yes" : "No" }}</td>
                         <td class="table-action-item">
                             <ActionButtons route-name="shift-groups" :parameter="shiftGroup.id"/>
                         </td>

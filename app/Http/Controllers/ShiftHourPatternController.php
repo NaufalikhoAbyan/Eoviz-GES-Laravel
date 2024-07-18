@@ -31,7 +31,14 @@ class ShiftHourPatternController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->shiftPatternForms as $item){
+            ShiftHourPattern::create([
+                'shift_work_hour_id' => $item['form']['shift_work_hour_id'],
+                'is_short_day' => $item['form']['is_short_day'],
+                'shift_group_id' => 2,
+            ]);
+        }
+
     }
 
     /**
