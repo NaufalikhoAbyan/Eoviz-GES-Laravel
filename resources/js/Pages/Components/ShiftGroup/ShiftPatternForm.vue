@@ -30,6 +30,7 @@ function deleteShiftForm(index) {
 defineExpose({
     shiftPatternForms
 })
+
 </script>
 
 <template>

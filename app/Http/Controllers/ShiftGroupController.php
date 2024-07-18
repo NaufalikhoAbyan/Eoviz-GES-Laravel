@@ -7,6 +7,7 @@ use App\Models\ShiftHourPattern;
 use App\Models\ShiftWorkHour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class ShiftGroupController extends Controller
 {
@@ -93,7 +94,10 @@ class ShiftGroupController extends Controller
      */
     public function edit(ShiftGroup $shiftGroup)
     {
-        //
+        return inertia('References/ShiftGroup/EditView', [
+            'shiftGroup' => $shiftGroup->load('shiftHourPatterns'),
+            'shiftWorkHours' => ShiftWorkHour::all()
+        ]);
     }
 
     /**
@@ -101,7 +105,35 @@ class ShiftGroupController extends Controller
      */
     public function update(Request $request, ShiftGroup $shiftGroup)
     {
-        //
+        foreach ($request['shift_group_patterns'] as $shift_group_pattern) {
+            $validator = Validator::make($shift_group_pattern['form'], [
+                'shift_work_hour_id' => ['required']
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors("All Shift Hour dropdown must be filled!");
+            }
+        }
+        foreach ($shiftGroup->shiftHourPatterns as $shiftHourPattern) {
+            $shiftHourPattern->delete();
+        }
+
+        $shiftGroup->update($request->validate([
+            'code' => ['required', Rule::unique('shift_groups')->ignore($shiftGroup->code, 'code')],
+            'name' => ['required'],
+            'order' => ['required', Rule::unique('shift_groups')->ignore($shiftGroup->order, 'order')],
+            'status' => ['required'],
+            'is_follow_holiday' => ['required'],
+            'description' => ['required'],
+        ]));
+
+        foreach ($request['shift_group_patterns'] as $shift_group_pattern) {
+            ShiftHourPattern::create([
+                'shift_work_hour_id' => $shift_group_pattern['form']['shift_work_hour_id'],
+                'is_short_day' => $shift_group_pattern['form']['is_short_day'],
+                'shift_group_id' => $shiftGroup['id'],
+            ]);
+        }
+        return redirect(route('shift-groups.index'))->with(['message' => 'Shift Group data successfully changed!']);
     }
 
     /**
