@@ -141,6 +141,7 @@ class ShiftGroupController extends Controller
      */
     public function destroy(ShiftGroup $shiftGroup)
     {
-        //
+        $shiftGroup->delete();
+        return redirect(route('shift-groups.index'))->with(['message' => 'Shift Group data successfully deleted!']);
     }
 }
