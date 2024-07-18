@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->boolean('is_permanent');
-            $table->integer('order');
+            $table->integer('order')->unique();
             $table->enum('status', ['Active', 'Not Active']);
             $table->timestamps();
         });

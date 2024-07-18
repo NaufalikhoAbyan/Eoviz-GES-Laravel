@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blood_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name', length: 255);
+            $table->string('name', length: 255)->unique();
             $table->enum('status', ['Active', 'Not Active']);
             $table->string('description', length: 255);
             $table->timestamps();

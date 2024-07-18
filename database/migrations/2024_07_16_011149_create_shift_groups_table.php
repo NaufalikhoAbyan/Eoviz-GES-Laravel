@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shift_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('code', length: 255);
+            $table->string('code', length: 255)->unique();
             $table->string('name', length: 255);
             $table->integer('order');
             $table->enum('status', ['Active', 'Not Active']);
