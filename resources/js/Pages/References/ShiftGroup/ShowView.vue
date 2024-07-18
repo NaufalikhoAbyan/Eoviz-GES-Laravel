@@ -2,6 +2,7 @@
 import { Link } from "@inertiajs/vue3";
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 import DetailsData from "@/Pages/Components/Details/DetailsData.vue";
+import {defineDocumentVisitor} from "eslint-plugin-vue/lib/utils/index.js";
 
 const props = defineProps({
     shiftGroup: Object,
@@ -35,7 +36,7 @@ let count = 1;
                             <tr v-for="shiftWorkHour in props.shiftWorkHours" class="bg-gray-100 border-b">
                                 <th class="table-item">{{ count++ }}</th>
                                 <th class="table-item w-full">{{ `${shiftWorkHour.name} (${shiftWorkHour.start} - ${shiftWorkHour.end})` }}</th>
-                                <th class="table-item text-nowrap">{{ shiftWorkHour['is_shortay'] ? 'Yes' : 'No' }}</th>
+                                <th class="table-item text-nowrap">{{ shiftWorkHour['is_short_day'] ? 'Yes' : 'No' }}</th>
                             </tr>
                         </tbody>
                     </table>
