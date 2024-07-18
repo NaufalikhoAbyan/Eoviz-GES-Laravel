@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShiftGroup;
+use App\Models\ShiftWorkHour;
 use App\Models\ShiftHourPattern;
 use Illuminate\Http\Request;
 
@@ -12,9 +14,8 @@ class ShiftHourPatternController extends Controller
      */
     public function index()
     {
-        $shiftHourPatterns = ShiftHourPattern::all();
         return inertia('References/ShiftHourPattern/IndexView', [
-            'shiftHourPatterns' => $shiftHourPatterns
+            'shiftHourPatterns' => ShiftHourPattern::all()->load('shiftGroup', 'shiftWorkHour')
         ]);
     }
 
@@ -46,7 +47,10 @@ class ShiftHourPatternController extends Controller
      */
     public function show(ShiftHourPattern $shiftHourPattern)
     {
-        //
+        $shiftHourPattern->load(['shiftGroup', 'shiftWorkHour']);
+        return inertia('References/ShiftHourPattern/ShowView', [
+            'shiftHourPattern' => $shiftHourPattern
+        ]);
     }
 
     /**
@@ -54,7 +58,7 @@ class ShiftHourPatternController extends Controller
      */
     public function edit(ShiftHourPattern $shiftHourPattern)
     {
-        //
+        return redirect(route('shift-hour-patterns.index'))->with(['error' => 'Data cannot be edited,  the data is being used for another record']);
     }
 
     /**
@@ -70,6 +74,6 @@ class ShiftHourPatternController extends Controller
      */
     public function destroy(ShiftHourPattern $shiftHourPattern)
     {
-        //
+        return redirect(route('shift-hour-patterns.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
     }
 }
