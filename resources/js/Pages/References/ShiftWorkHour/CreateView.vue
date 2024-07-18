@@ -1,5 +1,6 @@
 <script setup>
 import { useForm } from '@inertiajs/vue3';
+import { computed, watch } from 'vue'
 import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
 import TimeInputForm from "@/Pages/Components/Forms/TimeInputForm.vue";
 import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
@@ -8,7 +9,6 @@ import PageTitle from "@/Pages/Components/PageTitle.vue";
 import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
 import RadioInputForm from "@/Pages/Components/Forms/RadioInputForm.vue";
 import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";
-import SingleCheckboxInputForm from "@/Pages/Components/Forms/SingleCheckboxInputForm.vue";
 const props = defineProps({
     errors: Object
 });
@@ -26,8 +26,17 @@ const form = useForm({
     break_end: null,
     cross_day: null,
     overtime_type: null,
+    automatic_overtime: null,
     status: null,
     description: null
+});
+
+const isAutomaticOvertime = computed(() => form.overtime_type === 'Automatic');
+
+watch(isAutomaticOvertime, (newValue) => {
+    if (!newValue) {
+        form.automatic_overtime = null;
+    }
 });
 </script>
 
@@ -52,6 +61,13 @@ const form = useForm({
             <RadioItem label="Request" id="request"/>
             <RadioItem label="Automatic" id="automatic"/>
         </RadioInputForm>
+        <Transition>
+            <RadioInputForm title="Automatic Overtime" name="automatic_overtime" :error-message="props.errors.automatic_overtime" v-model="form.automatic_overtime" v-if="isAutomaticOvertime">
+                <RadioItem label="Presence Before Work Hour" id="presence_before_work_hour"/>
+                <RadioItem label="Presence After Work Hour" id="presence_after_work_hour"/>
+                <RadioItem label="Presence Before and After Work Hour" id="presence_before_and_after_work_hour"/>
+            </RadioInputForm>
+        </Transition>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>
             <RadioItem label="Not Active" id="not_active"/>
@@ -60,3 +76,37 @@ const form = useForm({
         <FormButtons cancel-route="shift-work-hours.index"/>
     </FormCard>
 </template>
+
+<style scoped>
+.v-enter-active {
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: ease-in;
+   -webkit-transition-timing-function: ease-in;
+   -o-transition-timing-function: ease-in;
+   transition-timing-function: ease-in;
+}
+
+.v-leave-active {
+   -moz-transition-duration: 0.3s;
+   -webkit-transition-duration: 0.3s;
+   -o-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.v-enter-to, .v-leave {
+   max-height: 100px;
+   overflow: hidden;
+}
+
+.v-enter, .v-leave-to {
+   overflow: hidden;
+   max-height: 0;
+}
+</style>

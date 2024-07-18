@@ -24,6 +24,7 @@ class ShiftWorkHour extends Model
         'break_end',
         'cross_day',
         'overtime_type',
+        'automatic_overtime',
         'status',
         'description'
     ];
