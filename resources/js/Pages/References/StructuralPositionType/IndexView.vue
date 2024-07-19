@@ -4,16 +4,17 @@ import PageTitle from "@/Pages/Components/PageTitle.vue";
 import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 
 const props = defineProps({
-    maritalStatuses: Object
+    structuralPositionTypes: Object
 });
+
 let count = 1;
 </script>
 
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Marital Statuses" description="List of all marital Status"/>
-            <Link :href="route('marital-statuses.create')"><button class="primary-btn h-fit">Add +</button></Link>
+            <PageTitle page-name="Structural Position Types" description="List of all structural position type"/>
+            <Link :href="route('structural-position-types.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}
@@ -26,20 +27,24 @@ let count = 1;
                 <thead>
                 <tr class="bg-gray-100 border-b">
                     <th class="table-item">No.</th>
+                    <th class="table-item">Parent</th>
+                    <th class="table-item">Code</th>
                     <th class="table-item">Name</th>
-                    <th class="table-item">Is Married</th>
+                    <th class="table-item">Order</th>
                     <th class="table-item">Status</th>
                     <th class="table-item w-1">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="maritalStatus in props.maritalStatuses" :key="maritalStatus.id">
+                <tr class="border-b" v-for="structuralPositionType in props.structuralPositionTypes" :key="structuralPositionType.id">
                     <td class="table-item">{{ count++ }}</td>
-                    <td class="table-item">{{ maritalStatus.name }}</td>
-                    <td class="table-item">{{ maritalStatus['is_married'] ? "Yes" : "No" }}</td>
-                    <td class="table-item">{{ maritalStatus.status }}</td>
+                    <td class="table-item">{{ structuralPositionType.parent ? structuralPositionType.parent.name : '' }}</td>
+                    <td class="table-item">{{ structuralPositionType.code }}</td>
+                    <td class="table-item">{{ structuralPositionType.name }}</td>
+                    <td class="table-item">{{ structuralPositionType.order }}</td>
+                    <td class="table-item">{{ structuralPositionType.status }}</td>
                     <td class="table-action-item w-fit">
-                        <ActionButtons route-name="marital-statuses" :parameter="maritalStatus.id"/>
+                        <ActionButtons route-name="structural-position-types" :parameter="structuralPositionType.id"/>
                     </td>
                 </tr>
                 </tbody>

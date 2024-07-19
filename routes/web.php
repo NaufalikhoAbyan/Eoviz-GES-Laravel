@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\StructuralPositionTypeController;
 use App\Http\Controllers\FunctionalPositionTypeController;
+use App\Http\Controllers\MaritalCodeController;
 use App\Http\Controllers\MaritalCodeTaxController;
 use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\GradeTypeController;
@@ -22,6 +24,8 @@ Route::get('/about', function () {
 
 Route::resources([
     'functional-position-types' => FunctionalPositionTypeController::class,
+    'structural-position-types' => StructuralPositionTypeController::class,
+    'marital-codes' => MaritalCodeController::class,
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'employee-statuses' => EmployeeStatusController::class,

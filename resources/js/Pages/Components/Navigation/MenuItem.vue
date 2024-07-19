@@ -17,7 +17,7 @@ const props = defineProps({
                 <img :src="props.src" alt="" class="w-full">
             </div>
             <Transition>
-                <div v-if="props.parent ? props.navState : true" class="overflow-hidden max-w-48">
+                <div v-if="props.parent ? props.navState : true" class="overflow-hidden max-w-96">
                     <p class="ml-6 flex-grow text-nowrap">{{ props.title }}</p>
                 </div>
             </Transition>
