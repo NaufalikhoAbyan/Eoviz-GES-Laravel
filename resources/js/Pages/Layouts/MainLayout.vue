@@ -34,6 +34,9 @@ const isExpanded = ref(false);
                         <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
                         <MenuItem title="Structural Position Types" link="structural-position-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-structural-position.png"/>
                         <MenuItem title="Functional Position Types" link="functional-position-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-functional-position.png"/>
+                        <MenuItem title="Shift Groups" link="shift-groups.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-functional-position.png"/>
+                        <MenuItem title="Shift Work Hours" link="shift-work-hours.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-setting.png"/>
+                        <MenuItem title="Shift Hour Patterns" link="shift-hour-patterns.index" :nav-state="isExpanded" src="/images/assets/menus/small-shift-setting.png"/>
                     </template>
                 </NavigationSidebar>
             </div>

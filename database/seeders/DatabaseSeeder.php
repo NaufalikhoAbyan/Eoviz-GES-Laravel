@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Database\Seeders\ShiftGroupSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,9 @@ class DatabaseSeeder extends Seeder
             MaritalStatusSeeder::class,
             MaritalCodeSeeder::class,
             BloodTypeSeeder::class,
+            ShiftGroupSeeder::class,
+            ShiftWorkHourSeeder::class,
+            ShiftHourPatternSeeder::class,
             ReligionSeeder::class,
             EmployeeTypeSeeder::class,
             EmployeeStatusSeeder::class,

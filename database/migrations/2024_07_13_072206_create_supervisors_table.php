@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('state', length: 255);
             $table->string('city', length: 255);
             $table->integer('postal_code');
-            $table->integer('phone');
-            $table->string('mobile', length: 255);
-            $table->string('email', length: 255);
+            $table->integer('phone')->length(12)->unique();
+            $table->integer('mobile')->length(12)->unique();
+            $table->string('email', length: 255)->unique();
             $table->enum('status', ['Active', 'Not Active']);
             $table->string('description', length: 255);
             $table->timestamps();

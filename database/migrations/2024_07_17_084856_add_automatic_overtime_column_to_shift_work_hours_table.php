@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('religions', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', length: 255)->unique();
-            $table->enum('status', ['Active', 'Not Active']);
-            $table->string('description', length: 255);
-            $table->timestamps();
+        Schema::table('shift_work_hours', function (Blueprint $table) {
+            $table->enum('automatic_overtime', ['Presence Before Work Hour', 'Presence After Work Hour', 'Presence Before and After Work Hour'])->nullable();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('religions');
+        Schema::table('shift_work_hours', function (Blueprint $table) {
+            //
+        });
     }
 };

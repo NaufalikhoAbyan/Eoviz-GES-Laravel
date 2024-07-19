@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee_types', function (Blueprint $table) {
+        Schema::create('shift_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->boolean('is_permanent');
-            $table->integer('order')->unique();
+            $table->string('code', length: 255)->unique();
+            $table->string('name', length: 255);
+            $table->integer('order');
             $table->enum('status', ['Active', 'Not Active']);
+            $table->boolean('is_follow_holiday');
+            $table->string('description', length: 255);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employee_types');
+        Schema::dropIfExists('shift_groups');
     }
 };
