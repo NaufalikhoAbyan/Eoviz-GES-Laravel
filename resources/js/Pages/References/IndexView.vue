@@ -3,7 +3,7 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
 </script>
 
 <template>
-    <div class="flex gap-12">
+    <div class="grid grid-cols-6 gap-10">
         <NavigationCard link="supervisors.index" src="/images/assets/menus/small-supervisior.png" title="Supervisors"/>
         <NavigationCard link="employee-types.index" src="/images/assets/menus/employee.png" title="Employee Types"/>
         <NavigationCard link="employee-statuses.index" src="/images/assets/menus/small-employee-status.png" title="Employee Statuses"/>

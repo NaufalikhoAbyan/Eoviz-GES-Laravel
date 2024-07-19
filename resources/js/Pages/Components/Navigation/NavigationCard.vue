@@ -9,13 +9,13 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="size-fit">
+    <div>
         <Link :href="route(props.link)">
-            <div class="flex flex-col items-center gap-2 size-fit">
-                <div class="card w-fit bg-gray-300 p-6 hover:scale-110">
-                    <img :src="props.src" alt="" class="size-12"/>
+            <div class="flex flex-col items-center gap-4">
+                <div class="card size-24 bg-gray-300 p-6 hover:scale-110">
+                    <img :src="props.src" alt="" class="size-full"/>
                 </div>
-                <p class="text-xl font-semibold opacity-60">{{ props.title }}</p>
+                <p class="text-xl font-semibold opacity-60 text-center">{{ props.title }}</p>
             </div>
         </Link>
     </div>
