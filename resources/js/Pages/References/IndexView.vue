@@ -14,5 +14,6 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
         <NavigationCard link="marital-statuses.index" src="/images/assets/menus/small-marital-status.png" title="Marital Statuses"/>
         <NavigationCard link="marital-code-taxes.index" src="/images/assets/menus/small-marital-tax.png" title="Marital Code Taxes"/>
         <NavigationCard link="marital-codes.index" src="/images/assets/menus/small-marital-code.png" title="Marital Codes"/>
+        <NavigationCard link="structural-position-types.index" src="/images/assets/menus/small-structural-position.png" title="Structural Position Types"/>
     </div>
 </template>
