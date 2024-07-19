@@ -1,7 +1,13 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReligionController;
 use App\Http\Controllers\WorkHourController;
+use App\Http\Controllers\StructuralPositionTypeController;
+use App\Http\Controllers\FunctionalPositionTypeController;
+use App\Http\Controllers\MaritalCodeController;
+use App\Http\Controllers\MaritalCodeTaxController;
+use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\GradeTypeController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\BloodTypesController;
@@ -22,6 +28,9 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::resources([
+    'functional-position-types' => FunctionalPositionTypeController::class,
+    'structural-position-types' => StructuralPositionTypeController::class,
+    'marital-codes' => MaritalCodeController::class,
     'blood-types' => BloodTypesController::class,
     'employee-types' => EmployeeTypeController::class,
     'employee-statuses' => EmployeeStatusController::class,

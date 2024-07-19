@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            FunctionalPositionTypeSeeder::class,
+            StructuralPositionTypeSeeder::class,
+            MaritalStatusSeeder::class,
+            MaritalCodeSeeder::class,
             BloodTypeSeeder::class,
             ShiftGroupSeeder::class,
             ShiftWorkHourSeeder::class,
@@ -31,7 +35,6 @@ class DatabaseSeeder extends Seeder
             SupervisorSeeder::class,
             MaritalCodeTaxSeeder::class,
             WorkHourSeeder::class,
-            MaritalStatusSeeder::class,
             GradeTypeSeeder::class
         ]);
     }
