@@ -8,6 +8,7 @@ import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";
 import TextAreaInputForm from "@/Pages/Components/Forms/TextAreaInputForm.vue";
 import FormCard from "@/Pages/Components/Forms/FormCard.vue";
 import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
+import TimeInputForm from "@/Pages/Components/Forms/TimeInputForm.vue";
 
 const props = defineProps({
     shiftWorkHour: Object,
@@ -64,11 +65,13 @@ watch(isAutomaticOvertime, (newValue) => {
             <RadioItem label="Automatic" id="automatic"/>
         </RadioInputForm>
         <Transition>
-            <RadioInputForm title="Automatic Overtime" name="automatic_overtime" :error-message="props.errors.automatic_overtime" v-model="form.automatic_overtime" v-if="isAutomaticOvertime">
-                <RadioItem label="Presence Before Work Hour" id="presence_before_work_hour"/>
-                <RadioItem label="Presence After Work Hour" id="presence_after_work_hour"/>
-                <RadioItem label="Presence Before and After Work Hour" id="presence_before_and_after_work_hour"/>
-            </RadioInputForm>
+            <div class="max-h-96 border-b overflow-hidden" v-if="isAutomaticOvertime">
+                <RadioInputForm title="Automatic Overtime" name="automatic_overtime" :error-message="props.errors.automatic_overtime" v-model="form.automatic_overtime">
+                    <RadioItem label="Presence Before Work Hour" id="presence_before_work_hour"/>
+                    <RadioItem label="Presence After Work Hour" id="presence_after_work_hour"/>
+                    <RadioItem label="Presence Before and After Work Hour" id="presence_before_and_after_work_hour"/>
+                </RadioInputForm>
+            </div>
         </Transition>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>
@@ -80,35 +83,13 @@ watch(isAutomaticOvertime, (newValue) => {
 </template>
 
 <style scoped>
-.v-enter-active {
-   -moz-transition-duration: 0.3s;
-   -webkit-transition-duration: 0.3s;
-   -o-transition-duration: 0.3s;
-   transition-duration: 0.3s;
-   -moz-transition-timing-function: ease-in;
-   -webkit-transition-timing-function: ease-in;
-   -o-transition-timing-function: ease-in;
-   transition-timing-function: ease-in;
-}
-
+.v-enter-active,
 .v-leave-active {
-   -moz-transition-duration: 0.3s;
-   -webkit-transition-duration: 0.3s;
-   -o-transition-duration: 0.3s;
-   transition-duration: 0.3s;
-   -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-   -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-   -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition: max-height 0.5s ease-in-out;
 }
 
-.v-enter-to, .v-leave {
-   max-height: 100px;
-   overflow: hidden;
-}
-
-.v-enter, .v-leave-to {
-   overflow: hidden;
-   max-height: 0;
+.v-enter-from,
+.v-leave-to {
+    max-height: 0;
 }
 </style>
