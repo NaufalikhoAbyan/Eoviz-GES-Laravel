@@ -28,12 +28,13 @@ Route::resources([
     'grade-types' => GradeTypeController::class,
     'shift-groups' => ShiftGroupController::class,
     'shift-work-hours' => ShiftWorkHourController::class,
-    'shift-hour-patterns' => ShiftHourPatternController::class,
     'religions' => ReligionController::class,
     'supervisors' => SupervisorController::class,
     'marital-code-taxes' => MaritalCodeTaxController::class,
     'work-hours' => WorkHourController::class,
     'marital-statuses' => MaritalStatusController::class
 ]);
+
+Route::resource('shift-hour-patterns', ShiftHourPatternController::class)->only(['index', 'show']);
 
 Route::get('references', ReferenceController::class)->name('references.index');

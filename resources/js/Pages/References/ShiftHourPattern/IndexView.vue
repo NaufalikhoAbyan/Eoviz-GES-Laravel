@@ -1,8 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import { Country, State } from 'country-state-city';
 import PageTitle from '@/Pages/Components/PageTitle.vue';
-import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     shiftHourPatterns: Object
 });
@@ -36,7 +34,7 @@ let count = 1;
                         <td class="table-item">{{ shiftHourPattern['is_short_day'] ? "Yes" : "No" }}</td>
                         <td class="table-item">{{ shiftHourPattern['shift_group'].name }}</td>
                         <td class="table-action-item">
-                            <ActionButtons route-name="shift-hour-patterns" :parameter="shiftHourPattern.id"/>
+                            <Link :href="route('shift-hour-patterns.show', shiftHourPattern.id)"><button class="act-btn bg-yellow-500">Show</button></Link>
                         </td>
                     </tr>
                 </tbody>
