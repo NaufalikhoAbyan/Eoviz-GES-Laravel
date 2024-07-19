@@ -102,7 +102,11 @@ class ShiftWorkHourController extends Controller
      */
     public function destroy(ShiftWorkHour $shiftWorkHour)
     {
-        $shiftWorkHour->delete();
+        try {
+            $shiftWorkHour->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('shift-work-hours.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('shift-work-hours.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
