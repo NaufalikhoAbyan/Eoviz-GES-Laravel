@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
+            FunctionalPositionTypeSeeder::class,
             StructuralPositionTypeSeeder::class,
             MaritalStatusSeeder::class,
             MaritalCodeSeeder::class,

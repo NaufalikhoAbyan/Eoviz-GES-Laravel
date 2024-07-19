@@ -33,6 +33,7 @@ const isExpanded = ref(false);
                         <MenuItem title="Marital Statuses" link="marital-statuses.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-status.png"/>
                         <MenuItem title="Marital Code Taxes" link="marital-code-taxes.index" :nav-state="isExpanded" src="/images/assets/menus/small-marital-tax.png"/>
                         <MenuItem title="Structural Position Types" link="structural-position-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-structural-position.png"/>
+                        <MenuItem title="Functional Position Types" link="functional-position-types.index" :nav-state="isExpanded" src="/images/assets/menus/small-functional-position.png"/>
                     </template>
                 </NavigationSidebar>
             </div>
