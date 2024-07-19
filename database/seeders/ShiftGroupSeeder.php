@@ -13,6 +13,11 @@ class ShiftGroupSeeder extends Seeder
      */
     public function run(): void
     {
-        ShiftGroup::factory(5)->create();
+        for($i = 1; $i < 6; $i++) {
+            ShiftGroup::factory()->create([
+                'code' => $i,
+                'order' => $i
+            ]);
+        }
     }
 }
