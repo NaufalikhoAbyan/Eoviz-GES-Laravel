@@ -5,9 +5,9 @@ const props = defineProps({
     id: String,
     label: String,
     errorMessage: String
-})
+});
 
-const model = defineModel()
+const model = defineModel();
 </script>
 
 <template>

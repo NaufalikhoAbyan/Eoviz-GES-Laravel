@@ -1,6 +1,6 @@
 <script setup>
 import { useForm } from "@inertiajs/vue3";
-import { computed, watch } from 'vue'
+import { computed, watch } from 'vue';
 import RadioInputForm from "@/Pages/Components/Forms/RadioInputForm.vue";
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 import RadioItem from "@/Pages/Components/Forms/RadioItem.vue";

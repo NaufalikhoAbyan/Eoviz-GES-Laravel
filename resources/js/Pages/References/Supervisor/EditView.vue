@@ -16,9 +16,9 @@ const props = defineProps({
     errors: Object
 });
 
-const countries = Country.getAllCountries()
-const states = ref(State.getStatesOfCountry(props.supervisor.country))
-const cities = ref(City.getCitiesOfState(props.supervisor.country, props.supervisor.state))
+const countries = Country.getAllCountries();
+const states = ref(State.getStatesOfCountry(props.supervisor.country));
+const cities = ref(City.getCitiesOfState(props.supervisor.country, props.supervisor.state));
 
 const form = useForm({
     name: props.supervisor.name,
@@ -37,18 +37,18 @@ const form = useForm({
 watch(
     () => form.country,
     () => {
-        form.state = null
-        states.value = State.getStatesOfCountry(form.country)
+        form.state = null;
+        states.value = State.getStatesOfCountry(form.country);
     }
-)
+);
 
 watch(
     () => form.state,
     () => {
-        form.city = null
-        cities.value = City.getCitiesOfState(form.country, form.state)
+        form.city = null;
+        cities.value = City.getCitiesOfState(form.country, form.state);
     }
-)
+);
 </script>
 
 <template>

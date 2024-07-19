@@ -1,6 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import { Country, State } from 'country-state-city';
 import PageTitle from '@/Pages/Components/PageTitle.vue';
 import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({

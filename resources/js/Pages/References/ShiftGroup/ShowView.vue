@@ -2,12 +2,11 @@
 import { Link } from "@inertiajs/vue3";
 import PageTitle from "@/Pages/Components/PageTitle.vue";
 import DetailsData from "@/Pages/Components/Details/DetailsData.vue";
-import {defineDocumentVisitor} from "eslint-plugin-vue/lib/utils/index.js";
 
 const props = defineProps({
     shiftGroup: Object,
     shiftWorkHours: Object
-})
+});
 
 let count = 1;
 </script>

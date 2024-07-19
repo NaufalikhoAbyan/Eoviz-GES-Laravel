@@ -3,17 +3,17 @@ import { inject } from "vue";
 
 const props = defineProps({
     root: Number
-})
+});
 
-const shiftWorkHours = inject('shiftWorkHours')
+const shiftWorkHours = inject('shiftWorkHours');
 
-const shiftHourValue = defineModel('shiftHourValue')
-const shortDayValue = defineModel('shortDayValue')
+const shiftHourValue = defineModel('shiftHourValue');
+const shortDayValue = defineModel('shortDayValue');
 
 defineEmits([
     'addShiftForm',
     'deleteShiftForm',
-])
+]);
 </script>
 
 <template>

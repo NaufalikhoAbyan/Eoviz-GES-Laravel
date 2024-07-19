@@ -33,11 +33,11 @@ const shiftPatternForms = ref([
             is_short_day: false
         })
     }
-])
+]);
 
-const nextIdValue = ref(1)
+const nextIdValue = ref(1);
 if(props.shiftGroup['shift_hour_patterns'].length !== 0) {
-    shiftPatternForms.value = []
+    shiftPatternForms.value = [];
     props.shiftGroup['shift_hour_patterns'].forEach((item) => {
         shiftPatternForms.value.push(
             {
@@ -47,17 +47,17 @@ if(props.shiftGroup['shift_hour_patterns'].length !== 0) {
                     is_short_day: !!item.is_short_day
                 })
             }
-        )
-    })
+        );
+    });
 }
 
-const patterns = ref(null)
+const patterns = ref(null);
 
 function submitAllForm() {
-    form.shift_group_patterns = patterns.value['shiftPatternForms']
+    form.shift_group_patterns = patterns.value['shiftPatternForms'];
 }
 
-provide('shiftWorkHours', props.shiftWorkHours)
+provide('shiftWorkHours', props.shiftWorkHours);
 </script>
 
 <template>

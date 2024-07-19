@@ -1,6 +1,6 @@
 <script setup>
 import { useForm } from '@inertiajs/vue3';
-import { computed, watch } from 'vue'
+import { computed, watch } from 'vue';
 import TextInputForm from "@/Pages/Components/Forms/TextInputForm.vue";
 import TimeInputForm from "@/Pages/Components/Forms/TimeInputForm.vue";
 import FormButtons from "@/Pages/Components/Forms/FormButtons.vue";

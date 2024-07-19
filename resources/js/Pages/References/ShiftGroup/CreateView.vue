@@ -32,15 +32,15 @@ const shiftPatternForms = ref([
             is_short_day: false
         })
     }
-])
+]);
 
-const patterns = ref(null)
+const patterns = ref(null);
 
 function submitAllForm() {
-    form.shift_group_patterns = patterns.value['shiftPatternForms']
+    form.shift_group_patterns = patterns.value['shiftPatternForms'];
 }
 
-provide('shiftWorkHours', props.shiftWorkHours)
+provide('shiftWorkHours', props.shiftWorkHours);
 </script>
 
 <template>

@@ -5,7 +5,7 @@ const props = defineProps({
     cancelRoute: String
 });
 
-defineEmits(['confirm'])
+defineEmits(['confirm']);
 </script>
 
 <template>

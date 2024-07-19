@@ -5,11 +5,11 @@ import ShiftPatternItem from "@/Pages/Components/ShiftGroup/ShiftPatternItem.vue
 const props = defineProps({
     shiftPatternForms: Object,
     errorMessage: String
-})
+});
 
 const nextIdValue = ref(2);
 
-const shiftPatternForms = ref(props.shiftPatternForms)
+const shiftPatternForms = ref(props.shiftPatternForms);
 
 function addShiftForm() {
     shiftPatternForms.value.push(
@@ -20,7 +20,7 @@ function addShiftForm() {
                 is_short_day: false
             })
         }
-    )
+    );
 }
 
 function deleteShiftForm(index) {
@@ -29,7 +29,7 @@ function deleteShiftForm(index) {
 
 defineExpose({
     shiftPatternForms
-})
+});
 
 </script>
 
