@@ -14,10 +14,8 @@ use App\Http\Controllers\BloodTypesController;
 use App\Http\Controllers\ShiftGroupController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\EmployeeTypeController;
-use App\Http\Controllers\MaritalStatusController;
 use App\Http\Controllers\ShiftWorkHourController;
 use App\Http\Controllers\EmployeeStatusController;
-use App\Http\Controllers\MaritalCodeTaxController;
 use App\Http\Controllers\ShiftHourPatternController;
 
 Route::get('/', function () {
