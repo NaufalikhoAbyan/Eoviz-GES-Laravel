@@ -13,6 +13,10 @@ class ShiftWorkHourSeeder extends Seeder
      */
     public function run(): void
     {
-        ShiftWorkHour::factory(5)->create();
+        for ($i = 1; $i <= 6; $i++) {
+            ShiftWorkHour::factory()->create([
+                'code' => $i
+            ]);
+        }
     }
 }
