@@ -11,7 +11,8 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
         <NavigationCard link="blood-types.index" src="/images/assets/menus/small-blood-type.png" title="Blood Types"/>
         <NavigationCard link="grade-types.index" src="/images/assets/menus/small-grade-type.png" title="Grade Types"/>
         <NavigationCard link="work-hours.index" src="/images/assets/menus/small-work-hour.png" title="Work Hours"/>
-        <NavigationCard link="marital-code-taxes.index" src="/images/assets/menus/small-marital-tax.png" title="Marital Code Taxes"/>
         <NavigationCard link="marital-statuses.index" src="/images/assets/menus/small-marital-status.png" title="Marital Statuses"/>
+        <NavigationCard link="marital-code-taxes.index" src="/images/assets/menus/small-marital-tax.png" title="Marital Code Taxes"/>
+        <NavigationCard link="marital-codes.index" src="/images/assets/menus/small-marital-code.png" title="Marital Codes"/>
     </div>
 </template>
