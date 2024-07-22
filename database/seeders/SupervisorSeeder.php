@@ -13,6 +13,17 @@ class SupervisorSeeder extends Seeder
      */
     public function run(): void
     {
-        Supervisor::factory(3)->create();
+        Supervisor::factory()->create([
+            'phone' => 1,
+            'mobile' => 1,
+        ]);
+        Supervisor::factory()->create([
+            'phone' => 2,
+            'mobile' => 2,
+        ]);
+        Supervisor::factory()->create([
+            'phone' => 3,
+            'mobile' => 3,
+        ]);
     }
 }
