@@ -1,13 +1,10 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
-import { Country, State } from 'country-state-city';
 import PageTitle from '@/Pages/Components/PageTitle.vue';
 import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     supervisors: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -26,28 +23,16 @@ let count = 1;
                         <th class="table-item">No.</th>
                         <th class="table-item">Name</th>
                         <th class="table-item">Street</th>
-                        <th class="table-item">Country</th>
-                        <th class="table-item">State</th>
-                        <th class="table-item">City</th>
-                        <th class="table-item">Postal Code</th>
-                        <th class="table-item">Phone</th>
-                        <th class="table-item">Mobile</th>
                         <th class="table-item">Email</th>
                         <th class="table-item">Status</th>
                         <th class="table-item">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="supervisor in props.supervisors" :key="supervisor.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(supervisor, index) in props.supervisors" :key="supervisor.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ supervisor.name }}</td>
                         <td class="table-item">{{ supervisor.street }}</td>
-                        <td class="table-item">{{ Country.getCountryByCode(supervisor.country).name }}</td>
-                        <td class="table-item">{{ State.getStateByCodeAndCountry(supervisor.state, supervisor.country).name }}</td>
-                        <td class="table-item">{{ supervisor.city }}</td>
-                        <td class="table-item">{{ supervisor.postal_code }}</td>
-                        <td class="table-item">{{ supervisor.phone }}</td>
-                        <td class="table-item">{{ supervisor.mobile }}</td>
                         <td class="table-item">{{ supervisor.email }}</td>
                         <td class="table-item">{{ supervisor.status }}</td>
                         <td class="table-action-item">

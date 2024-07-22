@@ -5,8 +5,6 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     shiftGroups: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -32,8 +30,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="shiftGroup in props.shiftGroups" :key="shiftGroup.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(shiftGroup, index) in props.shiftGroups" :key="shiftGroup.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ shiftGroup.code }}</td>
                         <td class="table-item">{{ shiftGroup.name }}</td>
                         <td class="table-item">{{ shiftGroup.order }}</td>

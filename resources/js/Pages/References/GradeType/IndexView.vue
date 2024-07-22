@@ -5,7 +5,6 @@ import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     gradeTypes: Object
 });
-let count = 1;
 </script>
 
 <template>
@@ -30,8 +29,8 @@ let count = 1;
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="gradeType in props.gradeTypes" :key="gradeType.id">
-                    <td class="table-item">{{ count++ }}</td>
+                <tr class="border-b" v-for="(gradeType, index) in props.gradeTypes" :key="gradeType.id">
+                    <td class="table-item">{{ index + 1 }}</td>
                     <td class="table-item">{{ gradeType.level }}</td>
                     <td class="table-item">{{ gradeType.code}}</td>
                     <td class="table-item">{{ gradeType.name }}</td>

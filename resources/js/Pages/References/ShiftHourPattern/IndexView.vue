@@ -4,8 +4,6 @@ import PageTitle from '@/Pages/Components/PageTitle.vue';
 const props = defineProps({
     shiftHourPatterns: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -28,8 +26,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="shiftHourPattern in props.shiftHourPatterns" :key="shiftHourPattern.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(shiftHourPattern, index) in props.shiftHourPatterns" :key="shiftHourPattern.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ shiftHourPattern['shift_work_hour'].name}}</td>
                         <td class="table-item">{{ shiftHourPattern['is_short_day'] ? "Yes" : "No" }}</td>
                         <td class="table-item">{{ shiftHourPattern['shift_group'].name }}</td>

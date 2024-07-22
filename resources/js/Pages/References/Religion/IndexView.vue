@@ -5,7 +5,6 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     religions: Object
 });
-let count = 1;
 </script>
 
 <template>
@@ -29,8 +28,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="religion in props.religions" :key="religion.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(religion, index) in props.religions" :key="religion.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ religion.name }}</td>
                         <td class="table-item">{{ religion.status }}</td>
                         <td class="table-item">{{ religion.description }}</td>

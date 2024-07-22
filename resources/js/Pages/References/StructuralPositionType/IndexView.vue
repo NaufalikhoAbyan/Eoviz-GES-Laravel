@@ -6,8 +6,6 @@ import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     structuralPositionTypes: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -36,8 +34,8 @@ let count = 1;
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="structuralPositionType in props.structuralPositionTypes" :key="structuralPositionType.id">
-                    <td class="table-item">{{ count++ }}</td>
+                <tr class="border-b" v-for="(structuralPositionType, index) in props.structuralPositionTypes" :key="structuralPositionType.id">
+                    <td class="table-item">{{ index + 1 }}</td>
                     <td class="table-item">{{ structuralPositionType.parent ? structuralPositionType.parent.name : '' }}</td>
                     <td class="table-item">{{ structuralPositionType.code }}</td>
                     <td class="table-item">{{ structuralPositionType.name }}</td>

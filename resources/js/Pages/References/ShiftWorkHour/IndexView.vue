@@ -5,8 +5,6 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     shiftWorkHours: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -37,8 +35,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="shiftWorkHours in props.shiftWorkHours" :key="shiftWorkHours.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(shiftWorkHours, index) in props.shiftWorkHours" :key="shiftWorkHours.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ shiftWorkHours.code }}</td>
                         <td class="table-item">{{ shiftWorkHours.name }}</td>
                         <td class="table-item">{{ shiftWorkHours.begin_log }}</td>
