@@ -3,11 +3,6 @@ import NavigationCard from "@/Pages/Components/Navigation/NavigationCard.vue";
 
 const navigationItems = [
     {
-        link: "employees.index",
-        src: "/images/assets/menus/small-employee-data.png",
-        title: "Employees",
-    },
-    {
         link: "supervisors.index",
         src: "/images/assets/menus/small-supervisior.png",
         title: "Supervisors",

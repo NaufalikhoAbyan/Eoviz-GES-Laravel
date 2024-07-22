@@ -7,11 +7,6 @@ const isExpanded = ref(false);
 
 const references = [
     {
-        link: "employees.index",
-        src: "/images/assets/menus/small-employee-data.png",
-        title: "Employees",
-    },
-    {
         link: "supervisors.index",
         src: "/images/assets/menus/small-supervisior.png",
         title: "Supervisors",
@@ -100,6 +95,11 @@ const references = [
                         <ArrorRigth class="text-white transition-all duration-500 ease-in-out h-6" :class="[isExpanded ? 'rotate-180' : 'rotate-0']"/>
                     </button>
                 </div>
+                <NavigationSidebar>
+                    <template v-slot:parent>
+                        <MenuItem title="Employee" link="employees.index" :nav-state="isExpanded" src="/images/assets/menus/small-employee-data.png" :parent="true"/>
+                    </template>
+                </NavigationSidebar>
                 <NavigationSidebar>
                     <template v-slot:parent>
                         <MenuItem title="References" link="references.index" :nav-state="isExpanded" src="/images/assets/menus/small-content.png" :parent="true"/>

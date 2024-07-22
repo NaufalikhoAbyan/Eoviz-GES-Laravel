@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return inertia('References/Employee/IndexView', [
+        return inertia('Employee/IndexView', [
             'employees' => Employee::all()->load('employeeType', 'employeeStatus', 'structuralPositionType')
         ]);
     }
