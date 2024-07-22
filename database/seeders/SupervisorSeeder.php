@@ -13,6 +13,6 @@ class SupervisorSeeder extends Seeder
      */
     public function run(): void
     {
-        Supervisor::factory(7)->create();
+        Supervisor::factory(3)->create();
     }
 }
