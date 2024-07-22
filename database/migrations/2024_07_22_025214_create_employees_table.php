@@ -39,10 +39,11 @@ return new class extends Migration
             $table->dateTime('join_date');
             $table->foreignIdFor(WorkHour::class)->constrained()->restrictOnDelete();
             $table->foreignIdFor(EmployeeType::class)->constrained()->restrictOnDelete();
-            $table->dateTime('employee_date');
+            $table->dateTime('effective_type_start_date');
+            $table->dateTime('effective_type_end_date');
             $table->foreignIdFor(EmployeeStatus::class)->constrained()->restrictOnDelete();
-            $table->dateTime('effictive_status_start_date');
-            $table->dateTime('effictive_status_end_date');
+            $table->dateTime('effective_status_start_date');
+            $table->dateTime('effective_status_end_date');
             $table->foreignIdFor(StructuralPositionType::class)->constrained()->restrictOnDelete();
             $table->dateTime('effective_structural_pos_start_date');
             $table->dateTime('effective_structural_pos_end_date');
