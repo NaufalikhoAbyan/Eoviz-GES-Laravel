@@ -29,4 +29,9 @@ class FunctionalPositionType extends Model
     {
         return $this->hasMany(FunctionalPositionType::class);
     }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'functional_position_type_id');
+    }
 }

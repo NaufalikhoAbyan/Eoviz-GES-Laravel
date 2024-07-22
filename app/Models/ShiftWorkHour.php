@@ -32,4 +32,9 @@ class ShiftWorkHour extends Model
     {
         return $this->HasMany(ShiftHourPattern::class);
     }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'shift_work_hour_id');
+    }
 }

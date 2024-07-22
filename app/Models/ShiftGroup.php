@@ -24,4 +24,9 @@ class ShiftGroup extends Model
     {
         return $this->hasMany(ShiftHourPattern::class);
     }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'shift_group_id');
+    }
 }

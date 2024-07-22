@@ -29,4 +29,9 @@ class StructuralPositionType extends Model
     {
         return $this->hasMany(StructuralPositionType::class);
     }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'structural_position_type_id');
+    }
 }

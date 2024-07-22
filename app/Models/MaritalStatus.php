@@ -21,4 +21,9 @@ class MaritalStatus extends Model
     {
         return $this->hasMany(MaritalCode::class);
     }
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'marital_status_id');
+    }
 }
