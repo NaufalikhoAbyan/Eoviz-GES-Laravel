@@ -6,8 +6,6 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     supervisors: Object
 });
-
-let count = 1;
 </script>
 
 <template>
@@ -38,8 +36,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="supervisor in props.supervisors" :key="supervisor.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(supervisor, index) in props.supervisors" :key="supervisor.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ supervisor.name }}</td>
                         <td class="table-item">{{ supervisor.street }}</td>
                         <td class="table-item">{{ Country.getCountryByCode(supervisor.country).name }}</td>

@@ -5,7 +5,6 @@ import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     functionalPositionTypes: Object
 });
-let count = 1;
 </script>
 
 <template>
@@ -34,8 +33,8 @@ let count = 1;
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="functionalPositionType in props.functionalPositionTypes" :key="functionalPositionType.id">
-                    <td class="table-item">{{ count++ }}</td>
+                <tr class="border-b" v-for="(functionalPositionType, index) in props.functionalPositionTypes" :key="functionalPositionType.id">
+                    <td class="table-item">{{ index + 1 }}</td>
                     <td class="table-item">{{ functionalPositionType.parent ? functionalPositionType.parent.name : '' }}</td>
                     <td class="table-item">{{ functionalPositionType.code }}</td>
                     <td class="table-item">{{ functionalPositionType.name }}</td>

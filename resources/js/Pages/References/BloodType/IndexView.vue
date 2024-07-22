@@ -5,7 +5,6 @@ import ActionButtons from '@/Pages/Components/ActionButtons.vue';
 const props = defineProps({
     bloodTypes: Object
 });
-let count = 1;
 </script>
 
 <template>
@@ -29,8 +28,8 @@ let count = 1;
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b" v-for="bloodType in props.bloodTypes" :key="bloodType.id">
-                        <td class="table-item">{{ count++ }}</td>
+                    <tr class="border-b" v-for="(bloodType, index) in props.bloodTypes" :key="bloodType.id">
+                        <td class="table-item">{{ index + 1 }}</td>
                         <td class="table-item">{{ bloodType.name }}</td>
                         <td class="table-item">{{ bloodType.status }}</td>
                         <td class="table-item">{{ bloodType.description }}</td>

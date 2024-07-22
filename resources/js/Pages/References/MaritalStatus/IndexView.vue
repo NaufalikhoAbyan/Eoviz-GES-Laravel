@@ -6,7 +6,6 @@ import ActionButtons from "@/Pages/Components/ActionButtons.vue";
 const props = defineProps({
     maritalStatuses: Object
 });
-let count = 1;
 </script>
 
 <template>
@@ -33,8 +32,8 @@ let count = 1;
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="border-b" v-for="maritalStatus in props.maritalStatuses" :key="maritalStatus.id">
-                    <td class="table-item">{{ count++ }}</td>
+                <tr class="border-b" v-for="(maritalStatus, index) in props.maritalStatuses" :key="maritalStatus.id">
+                    <td class="table-item">{{ index + 1 }}</td>
                     <td class="table-item">{{ maritalStatus.name }}</td>
                     <td class="table-item">{{ maritalStatus['is_married'] ? "Yes" : "No" }}</td>
                     <td class="table-item">{{ maritalStatus.status }}</td>
