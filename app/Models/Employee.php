@@ -23,10 +23,11 @@ class Employee extends Model
         'join_date',
         'work_hour_id',
         'employee_type_id',
-        'employee_date',
+        'effective_type_start_date',
+        'effective_type_end_date',
         'employee_status_id',
-        'effictive_status_start_date',
-        'effictive_status_end_date',
+        'effective_status_start_date',
+        'effective_status_end_date',
         'structural_position_type_id',
         'effective_structural_pos_start_date',
         'effective_structural_pos_end_date',
@@ -47,7 +48,7 @@ class Employee extends Model
         'effective_group_shift_end_date',
         'supervisor_id',
         'effective_supervisor_start_date',
-        'effective_supervisor_end_date',
+        'effective_supervisor_end_date'
     ];
 
     public function bloodType(): BelongsTo
