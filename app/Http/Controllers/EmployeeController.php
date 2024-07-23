@@ -106,7 +106,9 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        return inertia('Employee/ShowView', [
+            'employee' => $employee->load('bloodType', 'religion')
+        ]);
     }
 
     /**
