@@ -5,11 +5,11 @@ const props = defineProps({
     routeName: String,
     parameter: Number
 });
-const confirmWindow = ref(false)
+const confirmWindow = ref(false);
 
 function deleteRecord() {
-    router.delete(route(`${props.routeName}.destroy`, props.parameter))
-    confirmWindow.value = false
+    router.delete(route(`${props.routeName}.destroy`, props.parameter));
+    confirmWindow.value = false;
 }
 </script>
 

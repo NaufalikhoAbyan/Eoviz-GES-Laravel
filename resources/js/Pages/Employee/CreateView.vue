@@ -27,7 +27,7 @@ const props = defineProps({
     shiftWorkHours: Object,
     supervisors: Object,
     errors: Object
-})
+});
 
 const form = useForm({
     fullname: null,
@@ -68,52 +68,52 @@ const form = useForm({
     supervisor_id: null,
     effective_supervisor_start_date: null,
     effective_supervisor_end_date: null
-})
+});
 
-const isEmployementTab = ref(false)
+const isEmployementTab = ref(false);
 
-const nationalities = Nationalities.getAllNationalities()
+const nationalities = Nationalities.getAllNationalities();
 
-const maritalStatuses = props.maritalStatuses
-const maritalCodes = ref()
+const maritalStatuses = props.maritalStatuses;
+const maritalCodes = ref();
 watch(
     () => form.marital_status_id,
     () => {
-        form.marital_code_id = null
+        form.marital_code_id = null;
         for (let i = 0; i < maritalStatuses.length; i++) {
             if (maritalStatuses[i].id === form.marital_status_id) {
-                maritalCodes.value = maritalStatuses[i]['marital_codes']
+                maritalCodes.value = maritalStatuses[i]['marital_codes'];
             }
         }
     }
-)
+);
 
-const shiftGroups = props.shiftGroups
-const shiftWorkHour = props.shiftWorkHours
-const shiftWorkPattern = ref([])
-const selectedShiftWorkHour = ref([])
+const shiftGroups = props.shiftGroups;
+const shiftWorkHour = props.shiftWorkHours;
+const shiftWorkPattern = ref([]);
+const selectedShiftWorkHour = ref([]);
 watch(
     () => form.shift_group_id,
     () => {
-        form.shift_work_hour_id = null
-        shiftWorkPattern.value = []
-        selectedShiftWorkHour.value = []
+        form.shift_work_hour_id = null;
+        shiftWorkPattern.value = [];
+        selectedShiftWorkHour.value = [];
         for (let i = 0; i < shiftGroups.length; i++) {
             for (let l = 0; l < shiftGroups[i]['shift_hour_patterns'].length; l++) {
                 if (shiftGroups[i]['shift_hour_patterns'][l]['shift_work_hour_id'] === form.shift_group_id) {
-                    shiftWorkPattern.value.push(shiftGroups[i]['shift_hour_patterns'][l])
+                    shiftWorkPattern.value.push(shiftGroups[i]['shift_hour_patterns'][l]);
                 }
             }
         }
         for (let i = 0; i < shiftWorkHour.length; i++) {
             for (let l = 0; l < shiftWorkPattern.value.length; l++) {
                 if (shiftWorkPattern.value[l]['shift_work_hour_id'] === shiftWorkHour[i].id) {
-                    selectedShiftWorkHour.value.push(shiftWorkHour[i])
+                    selectedShiftWorkHour.value.push(shiftWorkHour[i]);
                 }
             }
         }
     }
-)
+);
 </script>
 
 <template>
