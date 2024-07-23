@@ -78,7 +78,11 @@ class ReligionController extends Controller
      */
     public function destroy(Religion $religion)
     {
-        $religion->delete();
+        try {
+            $religion->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('religions.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('religions.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

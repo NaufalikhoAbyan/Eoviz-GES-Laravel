@@ -78,7 +78,11 @@ class BloodTypesController extends Controller
      */
     public function destroy(BloodType $bloodType)
     {
-        $bloodType->delete();
+        try {
+            $bloodType->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('blood-types.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('blood-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

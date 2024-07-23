@@ -83,7 +83,11 @@ class WorkHourController extends Controller
      */
     public function destroy(WorkHour $workHour)
     {
-        $workHour->delete();
+        try {
+            $workHour->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('work-hours.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('work-hours.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }
