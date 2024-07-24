@@ -23,7 +23,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="grade-types.store" :form="form" method="POST">
-        <PageTitle page-name="Create Grade Type" description="Create a new grade type"/>
+        <PageTitle page-name="Create Grade Type" description="Create a new Grade Type data"/>
         <TextInputForm title="Level" name="level" :error-message="props.errors.level" v-model.number="form.level"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model.number="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>

@@ -9,7 +9,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Shift Hour Patterns" description="List of all shift hour pattern"/>
+            <PageTitle page-name="Shift Hour Patterns" description="List of all Shift Hour Pattern"/>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">
             {{ $page.props.flash.message }}

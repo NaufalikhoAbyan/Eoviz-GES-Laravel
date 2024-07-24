@@ -22,7 +22,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="employee-types.store" :form="form" method="POST">
-        <PageTitle page-name="Create Employee Type" description="Create a new employee type"/>
+        <PageTitle page-name="Create Employee Type" description="Create a new Employee Type data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Is Permanent" name="is_permanent" :error-message="props.errors.is_permanent" v-model="form.is_permanent">
             <RadioItem label="Yes" id="yes" value="1"/>

@@ -15,7 +15,7 @@ let count = 1;
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
             <div class="flex justify-between items-center">
-                <PageTitle page-name="Shift Group" description="Show a shift group data"/>
+                <PageTitle page-name="Shift Group" description="Show a Shift Group data"/>
                 <Link :href="route('shift-groups.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Code" :value="props.shiftGroup.code"/>

@@ -24,7 +24,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="functional-position-types.store" :form="form" method="POST">
-        <PageTitle page-name="Create Functional Position Type" description="Create a new functional position type"/>
+        <PageTitle page-name="Create Functional Position Type" description="Create a new Functional Position Type data"/>
         <DropdownInputForm title="Parent" :error-message="props.errors['functional_position_type_id']" v-model="form['functional_position_type_id']">
             <option :value="null">No parent</option>
             <option v-for="functionalPositionType in functionalPositionTypes" :key="functionalPositionType.id" :value="functionalPositionType.id">{{ functionalPositionType.name }}</option>

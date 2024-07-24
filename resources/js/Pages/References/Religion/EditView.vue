@@ -22,7 +22,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="religions.update" :parameter="props.religion.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Religion" description="Edit a religion data"/>
+        <PageTitle page-name="Edit Religion" description="Edit a Religion data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>

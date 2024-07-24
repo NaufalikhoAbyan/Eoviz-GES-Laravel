@@ -62,7 +62,7 @@ provide('shiftWorkHours', props.shiftWorkHours);
 
 <template>
     <FormCard save-route="shift-groups.update" :parameter="props.shiftGroup.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Shift Group" description="Edit a new shift group"/>
+        <PageTitle page-name="Edit Shift Group" description="Edit a Shift Group data"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <ShiftPatternForm ref="patterns" :shiftPatternForms="shiftPatternForms" :error-message="props.errors[0]"/>
