@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class WorkHour extends Model
 {
@@ -17,4 +18,9 @@ class WorkHour extends Model
         'description',
         'is_locked'
     ];
+
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class, 'work_hour_id');
+    }
 }

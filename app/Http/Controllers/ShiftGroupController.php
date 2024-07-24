@@ -141,7 +141,11 @@ class ShiftGroupController extends Controller
      */
     public function destroy(ShiftGroup $shiftGroup)
     {
-        $shiftGroup->delete();
+        try {
+            $shiftGroup->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('shift-groups.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('shift-groups.index'))->with(['message' => 'Shift Group data successfully deleted!']);
     }
 }

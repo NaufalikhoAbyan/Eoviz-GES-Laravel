@@ -94,7 +94,11 @@ class SupervisorController extends Controller
      */
     public function destroy(Supervisor $supervisor)
     {
-        $supervisor->delete();
+        try {
+            $supervisor->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('supervisors.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('supervisors.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

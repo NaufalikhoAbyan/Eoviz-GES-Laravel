@@ -84,7 +84,11 @@ class GradeTypeController extends Controller
      */
     public function destroy(GradeType $gradeType)
     {
-        $gradeType->delete();
+        try {
+            $gradeType->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('grade-types.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect()->route('grade-types.index')->with(['message' => 'Data succesfully deleted!']);
     }
 }

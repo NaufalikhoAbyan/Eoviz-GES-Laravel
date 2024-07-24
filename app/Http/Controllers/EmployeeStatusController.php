@@ -82,7 +82,11 @@ class EmployeeStatusController extends Controller
      */
     public function destroy(EmployeeStatus $employeeStatus)
     {
-        $employeeStatus->delete();
+        try {
+            $employeeStatus->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('employee-statuses.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('employee-statuses.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

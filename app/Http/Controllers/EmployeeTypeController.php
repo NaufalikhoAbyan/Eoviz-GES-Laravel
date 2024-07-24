@@ -82,7 +82,11 @@ class EmployeeTypeController extends Controller
      */
     public function destroy(EmployeeType $employeeType)
     {
-        $employeeType->delete();
+        try {
+            $employeeType->delete();
+        } catch (\Exception $exception) {
+            return redirect(route('employee-types.index'))->with(['error' => 'Data cannot be deleted, the data is being used for another record']);
+        }
         return redirect(route('employee-types.index'))->with(['message' => 'Data successfully deleted!']);
     }
 }

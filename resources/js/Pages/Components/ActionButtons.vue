@@ -5,7 +5,12 @@ const props = defineProps({
     routeName: String,
     parameter: Number
 });
-const confirmWindow = ref(false)
+const confirmWindow = ref(false);
+
+function deleteRecord() {
+    router.delete(route(`${props.routeName}.destroy`, props.parameter));
+    confirmWindow.value = false;
+}
 </script>
 
 <template>
@@ -16,7 +21,7 @@ const confirmWindow = ref(false)
         <div v-if="confirmWindow" class="flex flex-col gap-4 mt-0 p-4 top-9 right-0 card absolute">
             <p class="text-nowrap">Deleted data will be removed permanently</p>
             <div class="flex w-full justify-end gap-4">
-                <button @click="router.delete(route(`${props.routeName}.destroy`, props.parameter))" class="act-btn bg-red-500">Delete</button>
+                <button @click="deleteRecord" class="act-btn bg-red-500">Delete</button>
                 <button @click="confirmWindow = false" class="secondary-btn">Cancel</button>
             </div>
         </div>
