@@ -12,7 +12,7 @@ const props = defineProps({
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
             <div class="flex justify-between items-center">
-                <PageTitle page-name="Structural Position Type" description="Show a structural position type data"/>
+                <PageTitle page-name="Structural Position Type" description="Show a Structural Position Type data"/>
                 <Link :href="route('structural-position-types.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Parent" :value="props.structuralPositionType.parent ? props.structuralPositionType.parent.name : 'No Parent'"/>

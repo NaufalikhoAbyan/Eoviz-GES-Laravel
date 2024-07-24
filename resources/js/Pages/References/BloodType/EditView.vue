@@ -22,7 +22,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="blood-types.update" :parameter="props.bloodType.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Blood Type" description="Edit a blood type data"/>
+        <PageTitle page-name="Edit Blood Type" description="Edit a Blood Type data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">
             <RadioItem label="Active" id="active"/>

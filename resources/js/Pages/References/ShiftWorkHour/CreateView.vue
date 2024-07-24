@@ -42,7 +42,7 @@ watch(isAutomaticOvertime, (newValue) => {
 
 <template>
     <FormCard save-route="shift-work-hours.store" :form="form" method="POST">
-        <PageTitle page-name="Create Shift Work Hour" description="Create a new Shift Work Hour"/>
+        <PageTitle page-name="Create Shift Work Hour" description="Create a new Shift Work Hour data"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TimeInputForm title="Begin Log" name="begin_log" :error-message="props.errors.begin_log" v-model="form.begin_log"/>

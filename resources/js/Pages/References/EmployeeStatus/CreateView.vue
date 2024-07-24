@@ -23,7 +23,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="employee-statuses.store" :form="form" method="POST">
-        <PageTitle page-name="Create Employee Status" description="Create a new employee status"/>
+        <PageTitle page-name="Create Employee Status" description="Create a new Employee Status data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Is Active" name="is_active" :error-message="props.errors.is_active" v-model="form.is_active">
             <RadioItem label="Yes" id="yes" value="1"/>

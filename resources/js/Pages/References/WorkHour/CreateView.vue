@@ -24,7 +24,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="work-hours.store" :form="form" method="POST">
-        <PageTitle page-name="Create Work Hour" description="Create a new Work Hour"/>
+        <PageTitle page-name="Create Work Hour" description="Create a new Work Hour data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TextInputForm title="Hour" name="hour" :error-message="props.errors.hour" v-model="form.hour"/>
         <TextInputForm title="Holiday" name="holiday" :error-message="props.errors.holiday" v-model="form.holiday"/>

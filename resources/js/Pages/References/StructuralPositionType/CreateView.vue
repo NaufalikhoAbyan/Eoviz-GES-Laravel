@@ -26,7 +26,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="structural-position-types.store" :form="form" method="POST">
-        <PageTitle page-name="Create Structural Position Type" description="Create a new structural position type"/>
+        <PageTitle page-name="Create Structural Position Type" description="Create a new Structural Position Type"/>
         <DropdownInputForm title="Parent" :error-message="props.errors['structural_position_type_id']" v-model="form['structural_position_type_id']">
             <option :value="null">No parent</option>
             <option v-for="structuralPositionType in structuralPositionTypes" :key="structuralPositionType.id" :value="structuralPositionType.id">{{ structuralPositionType.name }}</option>

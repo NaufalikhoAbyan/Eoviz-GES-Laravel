@@ -12,7 +12,7 @@ const props = defineProps({
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
             <div class="flex justify-between items-center">
-                <PageTitle page-name="Employee Type" description="Show an employee type data"/>
+                <PageTitle page-name="Employee Type" description="Show an Employee Type data"/>
                 <Link :href="route('employee-types.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Name" :value="props.employeeType.name"/>

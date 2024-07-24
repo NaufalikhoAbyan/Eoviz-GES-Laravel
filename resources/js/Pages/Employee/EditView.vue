@@ -142,7 +142,7 @@ watch(
 
 <template>
     <FormCard save-route="employees.update" :parameter="props.employee.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Employee" description="Edit an employee data"/>
+        <PageTitle page-name="Edit Employee" description="Edit an Employee data"/>
         <div class="flex text-xl mt-8">
             <div @click="isEmployementTab = false" class="flex flex-col items-center gap-2 w-1/2 cursor-pointer text-center opacity-75">
                 <p>Personal Data</p>

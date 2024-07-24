@@ -12,7 +12,7 @@ const props = defineProps({
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
            <div class="flex justify-between items-center">
-                <PageTitle page-name="Shift Hour Pattern" description="Show an shift hour pattern data"/>
+                <PageTitle page-name="Shift Hour Pattern" description="Show a Shift Hour Pattern data"/>
                 <Link :href="route('shift-hour-patterns.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <Link :href="route('shift-work-hours.show', props.shiftHourPattern.shift_work_hour_id)">

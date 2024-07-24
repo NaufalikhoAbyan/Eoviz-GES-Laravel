@@ -11,7 +11,7 @@ const props = defineProps({
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
             <div class="flex justify-between items-center">
-                <PageTitle page-name="Functional Position Type" description="Show a functional position type data"/>
+                <PageTitle page-name="Functional Position Type" description="Show a Functional Position Type data"/>
                 <Link :href="route('functional-position-types.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Parent" :value="props.functionalPositionType.parent ? props.functionalPositionType.parent.name : 'No Parent'"/>

@@ -20,7 +20,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="marital-code-taxes.update" :parameter="props.maritalCodeTax.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Marital Code Tax" description="Edit a new code tax"/>
+        <PageTitle page-name="Edit Marital Code Tax" description="Edit a Marital Code Tax data"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model.number="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TextInputForm title="Order" name="order" :error-message="props.errors.order" v-model.number="form.order"/>

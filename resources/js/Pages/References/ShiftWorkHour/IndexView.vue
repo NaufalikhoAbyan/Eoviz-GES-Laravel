@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Shift Work Hours" description="List of all shift work hour"/>
+            <PageTitle page-name="Shift Work Hours" description="List of all Shift Work Hour"/>
             <Link :href="route('shift-work-hours.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">

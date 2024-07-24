@@ -52,7 +52,7 @@ watch(
 
 <template>
     <FormCard save-route="supervisors.store" :form="form" method="POST">
-        <PageTitle page-name="Create Supervisor" description="Create a new supervisor"/>
+        <PageTitle page-name="Create Supervisor" description="Create a new Supervisor data"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TextAreaInputForm title="Street" name="street" :error-message="props.errors.street" v-model="form.street"/>
         <DropdownInputForm title="Country" :error-message="props.errors.country" v-model="form.country">

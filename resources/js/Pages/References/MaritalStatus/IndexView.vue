@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <PageTitle page-name="Marital Statuses" description="List of all marital Status"/>
+            <PageTitle page-name="Marital Statuses" description="List of all Marital Status"/>
             <Link :href="route('marital-statuses.create')"><button class="primary-btn h-fit">Add +</button></Link>
         </div>
         <div v-if="$page.props.flash.message" class="card-success">

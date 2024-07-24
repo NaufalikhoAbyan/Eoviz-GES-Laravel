@@ -118,7 +118,7 @@ watch(
 
 <template>
     <FormCard save-route="employees.store" :form="form" method="POST">
-        <PageTitle page-name="Create Employee" description="Create a new employee"/>
+        <PageTitle page-name="Create Employee" description="Create a new Employee data"/>
         <div class="flex text-xl mt-8">
             <div @click="isEmployementTab = false" class="flex flex-col items-center gap-2 w-1/2 cursor-pointer text-center opacity-75">
                 <p>Personal Data</p>

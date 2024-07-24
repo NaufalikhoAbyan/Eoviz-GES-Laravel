@@ -27,7 +27,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="marital-codes.update" :parameter="props.maritalCode.id" :form="form" method="PUT">
-        <PageTitle page-name="Edit Marital Code" description="Edit a marital code data"/>
+        <PageTitle page-name="Edit Marital Code" description="Edit a Marital Code data"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <RadioInputForm title="Status" name="status" :error-message="props.errors.status" v-model="form.status">

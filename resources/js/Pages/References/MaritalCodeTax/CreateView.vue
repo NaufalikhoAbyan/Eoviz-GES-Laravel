@@ -19,7 +19,7 @@ const form = useForm({
 
 <template>
     <FormCard save-route="marital-code-taxes.store" :form="form" method="POST">
-        <PageTitle page-name="Create Marital Code Tax" description="Create a new code tax"/>
+        <PageTitle page-name="Create Marital Code Tax" description="Create a new Marital Code Tax data"/>
         <TextInputForm title="Code" name="code" :error-message="props.errors.code" v-model.number="form.code"/>
         <TextInputForm title="Name" name="name" :error-message="props.errors.name" v-model="form.name"/>
         <TextInputForm title="Order" name="order" :error-message="props.errors.order" v-model.number="form.order"/>
