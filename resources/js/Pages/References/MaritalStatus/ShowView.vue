@@ -12,11 +12,11 @@ const props = defineProps({
     <div class="flex justify-center">
         <div class="card px-8 w-1/2">
             <div class="flex justify-between items-center">
-                <PageTitle page-name="Marital Status" description="Show an marital status data"/>
+                <PageTitle page-name="Marital Status" description="Show a Marital Status data"/>
                 <Link :href="route('marital-statuses.index')"><button class="primary-btn h-fit">Back</button></Link>
             </div>
             <DetailsData title="Name" :value="props.maritalStatus.name"/>
-            <DetailsData title="Is Married" :value="props.maritalStatus['is_married']" :boolean="true"/>
+            <DetailsData title="Is Married" :value="props.maritalStatus['is_married']" :boolean="true" true-value="Yes" false-value="No"/>
             <DetailsData title="status" :value="props.maritalStatus.status"/>
             <DetailsData title="description" :value="props.maritalStatus.description"/>
         </div>
