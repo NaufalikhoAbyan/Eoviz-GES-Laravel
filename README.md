@@ -1,8 +1,14 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-<p align="center">X</p>
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.software.or.id/wp-content/uploads/2021/04/eoviz.jpg" width="400" alt="Laravel Logo"></a></p>
-
+# Eoviz-GES-Laravel
 Project Masih WIP, jika ingin melihat progress terkini bisa checkout di branch development
+
+### Built With
+* [![Vue][Vue.js]][Vue-url]
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Tailwind][Tailwind.com]][Tailwind-url]
+* [![MYSQL][MYSQL.com]][MYSQL-url]
+
+### Contributors
+[![Contributors][contributors-shield]][contributors-url]
 
 # Requirement
 - Node.js ≤ 18.3
@@ -60,3 +66,17 @@ npm run dev
 php artisan serve
 ```
 > kedua command ini harus berjalan bersama-sama
+
+
+<!-- MARKDOWN LINKS  -->
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Tailwind.com]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindui.com
+[MYSQL.com]: https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white
+[MYSQL-url]: https://mysql.com
+
+[contributors-shield]: https://img.shields.io/github/contributors/NaufalikhoAbyan/Eoviz-GES-Laravel.svg?style=for-the-badge
+[contributors-url]: https://github.com/NaufalikhoAbyan/Eoviz-GES-Laravel/graphs/contributors
